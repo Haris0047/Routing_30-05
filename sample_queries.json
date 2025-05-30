@@ -1,0 +1,375 @@
+{
+  "sample_queries": [
+    {
+      "query": "What's the latest news about Tesla earnings?",
+      "expected": {
+        "tool_id": "web_search_deep",
+        "profile_id": "web-search"
+      }
+    },
+    {
+      "query": "Search for recent analyst reports on Apple stock",
+      "expected": {
+        "tool_id": "web_search_deep",
+        "profile_id": "web-search"
+      }
+    },
+    {
+      "query": "Find current market sentiment about Bitcoin",
+      "expected": {
+        "tool_id": "web_search_deep",
+        "profile_id": "web-search"
+      }
+    },
+    {
+      "query": "Get analyst price targets for Microsoft",
+      "expected": {
+        "tool_id": "price_target_consensus_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Show me the latest price target changes",
+      "expected": {
+        "tool_id": "price_target_latest_news_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "What are the financial estimates for Amazon next quarter?",
+      "expected": {
+        "tool_id": "financial_estimates_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Give me the current stock rating for Google",
+      "expected": {
+        "tool_id": "stock_grades_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Show me recent analyst upgrades and downgrades",
+      "expected": {
+        "tool_id": "stock_grade_latest_news_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "When is the next dividend payment for Coca-Cola?",
+      "expected": {
+        "tool_id": "dividends_company_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Show me upcoming earnings announcements this week",
+      "expected": {
+        "tool_id": "earnings_calendar_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "What IPOs are coming up next month?",
+      "expected": {
+        "tool_id": "ipos_calendar_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Give me a comprehensive analysis of Tesla's financial performance",
+      "expected": {
+        "tool_id": "comprehensive_company_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Analyze the current market movers and what's driving them",
+      "expected": {
+        "tool_id": "market_movers_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Perform technical analysis on Apple stock",
+      "expected": {
+        "tool_id": "technical_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "What's the analyst sentiment on Netflix?",
+      "expected": {
+        "tool_id": "analyst_sentiment_analysis",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Conduct a DCF valuation analysis for Microsoft",
+      "expected": {
+        "tool_id": "valuation_dcf_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Analyze Amazon's ESG sustainability performance",
+      "expected": {
+        "tool_id": "esg_sustainability_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "How are different sectors performing in the current economic environment?",
+      "expected": {
+        "tool_id": "macro_economic_sector_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "What are the top holdings in QQQ ETF?",
+      "expected": {
+        "tool_id": "etf_mutual_fund_holding_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Analyze recent insider trading activity for Tesla",
+      "expected": {
+        "tool_id": "insider_Trading_institutional_ownership_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Find high dividend yield stocks for income investing",
+      "expected": {
+        "tool_id": "dividend_strategy_income_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "What M&A activity is happening in the tech sector?",
+      "expected": {
+        "tool_id": "merger_and_acquisition_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "How is the IPO market performing lately?",
+      "expected": {
+        "tool_id": "ipo_market_trends_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Analyze USD/EUR forex trading opportunities",
+      "expected": {
+        "tool_id": "forex_and_commodity_trading_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "What's the sentiment in the cryptocurrency market?",
+      "expected": {
+        "tool_id": "crypto_market_sentiment_price_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Give me intraday trading signals for SPY",
+      "expected": {
+        "tool_id": "market_data_technical_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Analyze the latest earnings call transcript for Apple",
+      "expected": {
+        "tool_id": "earnings_and_transcript_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "What financial news is impacting the market today?",
+      "expected": {
+        "tool_id": "market_news_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Extract qualitative insights from Tesla's latest 10-K filing",
+      "expected": {
+        "tool_id": "qualitative_analysis_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Get the revenue and margin data for Apple",
+      "expected": {
+        "tool_id": "quantitative_analysis_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "What's the financial health rating for Boeing?",
+      "expected": {
+        "tool_id": "ratings_snapshot_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Show me the rating history for General Electric",
+      "expected": {
+        "tool_id": "historical_ratings_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "What are the price targets for AMD by timeframe?",
+      "expected": {
+        "tool_id": "price_target_summary_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Show me recent price target news for NVIDIA",
+      "expected": {
+        "tool_id": "price_target_news_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "What's the consensus rating for Ford?",
+      "expected": {
+        "tool_id": "stock_grades_summary_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Show me recent rating changes for Tesla",
+      "expected": {
+        "tool_id": "stock_grade_news_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "What's the historical rating trend for Meta?",
+      "expected": {
+        "tool_id": "historical_stock_grades_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "When are all the dividend payments this month?",
+      "expected": {
+        "tool_id": "dividends_calendar_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Show me Netflix earnings report details",
+      "expected": {
+        "tool_id": "earnings_report_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "What IPO disclosure filings were submitted recently?",
+      "expected": {
+        "tool_id": "ipos_disclosure_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Get the prospectus details for the upcoming Stripe IPO",
+      "expected": {
+        "tool_id": "ipos_prospectus_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "What's the stock split history for Amazon?",
+      "expected": {
+        "tool_id": "stock_split_details_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Are there any upcoming stock splits this quarter?",
+      "expected": {
+        "tool_id": "stock_splits_calendar_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Summarize the latest ESG initiatives by Microsoft.",
+      "expected": {
+        "tool_id": "esg_sustainability_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "What are the most recent insider trades for Amazon?",
+      "expected": {
+        "tool_id": "insider_Trading_institutional_ownership_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Give me a DCF valuation for Alphabet (GOOGL).",
+      "expected": {
+        "tool_id": "valuation_dcf_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Show me the upcoming stock splits in the S&P 500.",
+      "expected": {
+        "tool_id": "stock_splits_calendar_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Analyze the sector rotation trends in the current market.",
+      "expected": {
+        "tool_id": "macro_economic_sector_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "What are the top holdings and sector weights in the VOO ETF?",
+      "expected": {
+        "tool_id": "etf_mutual_fund_holding_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "Find the latest analyst price target changes for Nvidia.",
+      "expected": {
+        "tool_id": "price_target_latest_news_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Get a summary of recent M&A activity in the healthcare sector.",
+      "expected": {
+        "tool_id": "merger_and_acquisition_analysis_tool",
+        "profile_id": "workflows"
+      }
+    },
+    {
+      "query": "What are the upcoming IPOs in the technology sector?",
+      "expected": {
+        "tool_id": "ipos_calendar_tool",
+        "profile_id": "internal-search"
+      }
+    },
+    {
+      "query": "Provide a technical analysis for Bitcoin.",
+      "expected": {
+        "tool_id": "technical_analysis_tool",
+        "profile_id": "workflows"
+      }
+    }
+  ]
+} 
