@@ -1,0 +1,26 @@
+"symbol": "The field labeled "symbol" refers to the unique alphanumeric identifier assigned to a publicly traded company's stock. This identifier is commonly known as a ticker symbol or stock symbol. It is a string (sequence of characters) that represents a shorthand for the company's name and is used on stock exchanges to facilitate the trading of shares. The ticker symbol is typically a concise abbreviation of the company's name, making it easier for investors, traders, and analysts to quickly identify and reference the stock in question.
+
+For example, the value "AAPL" in the symbol field stands for Apple Inc., which is listed"
+"name": "The "name" field refers to the official designation or title used to identify a particular entity, which can be a company, organization, brand, or product. This field is typically a string, meaning it is composed of a sequence of characters that together form text. The content of this field should be the full, formal name as it is legally registered or commonly recognized. For instance, in the example value "Apple Inc.," "Apple" is the brand name, and "Inc." signifies that it is an incorporated entity. When filling out this field, it's important to use the precise name"
+"currency": "The "currency" field represents the type of money that is used in a particular transaction or financial context. It is a string that typically consists of a three-letter code standardized by the International Organization for Standardization (ISO) to define specific currencies from around the world. This code helps to avoid confusion and ensure clarity in financial transactions, especially when dealing with international trade or travel.
+
+For example, the value "USD" in the currency field stands for United States Dollar, which is the official currency of the United States of America. This code indicates that any monetary values associated with this field should be interpreted as"
+"exchangeFullName": "The field `exchangeFullName` is a text-based identifier (String) that represents the complete and official name of a stock exchange where securities, such as stocks and bonds, are bought and sold. This field is used to provide users with a clear understanding of which specific exchange a company's securities are listed on, which can be important for various financial and investment decisions.
+
+As a String type, this field consists of a sequence of characters that together spell out the full name of the exchange. It is not just an abbreviation or a symbol, but the entire formal name as recognized in financial markets.
+
+For example"
+"exchange": "The field "exchange" refers to the name of the stock exchange where a particular security is listed and traded. A stock exchange is a marketplace where securities, such as stocks, bonds, and options, are bought and sold. The exchange ensures fair and orderly trading and disseminates price information for securities listed on that exchange.
+
+The type of this field is a string, which means it is composed of text rather than numbers or other data types. The string should contain the official abbreviation or acronym of the exchange, which is typically a sequence of uppercase letters that represent the full name of the exchange.
+
+For"
+"date": "The "date" field represents a specific calendar date, following the ISO 8601 standard for date representation. This field is of the string data type, meaning it consists of a sequence of characters that, in this context, are used to represent a date in a structured format.
+
+The format for the date string is "YYYY-MM-DD", where:
+- YYYY represents the 4-digit year,
+- MM represents the 2-digit month (with a leading zero if the month is a single digit),
+- DD represents the 2-digit day of the month (with a leading zero if the day is"
+"revenueLow": "The `revenueLow` field represents the lower boundary or minimum amount of revenue that a company, entity, or division has generated or is expected to generate within a specified period, such as a fiscal quarter or year. This field is typically used in financial documents, reports, or datasets where there is a need to express a range of possible revenues, with `revenueLow` indicating the conservative estimate.
+
+The type of the `revenueLow` field is numerical, and it usually contains a large integer value since revenue figures can be quite substantial, especially for large companies. In databases or data exchange"

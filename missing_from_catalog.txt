@@ -1,0 +1,6 @@
+fields
+format
+inactive
+status
+type
+window

@@ -11,8 +11,6 @@ from enum import Enum
 import numpy as np
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams, PointStruct
-from sentence_transformers import CrossEncoder
-import torch
 
 # ---------------------------------------------------------------------------
 # Helper to fetch environment variables
@@ -277,7 +275,7 @@ def _get_qdrant_client_with_retry(url: str = "localhost", port: int = 6333, api_
 
 
 class SemanticRouter:
-    """Pure semantic router with cross-encoder re-ranking."""
+    """Pure semantic router for financial queries using embeddings."""
 
     def __init__(self, 
                  qdrant_url: str = "localhost", 
@@ -285,11 +283,8 @@ class SemanticRouter:
                  qdrant_api_key: str | None = None,
                  high_confidence_threshold: float = 0.70,
                  medium_confidence_threshold: float = 0.50,
-                 top_k_tools: int = 10,
-                 use_cross_encoder: bool = True,
-                 cross_encoder_model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"):
-        
-        # Existing initialization code...
+                 top_k_tools: int = 10):
+        # Connect to Qdrant
         self.client = _get_qdrant_client_with_retry(
             url=qdrant_url, 
             port=qdrant_port, 
@@ -298,86 +293,25 @@ class SemanticRouter:
             retry_delay=5
         )
         
+        # Collection names
         self.tools_collection = "semantic_tools"
         self.profiles_collection = "semantic_profiles"
+        
+        # Confidence thresholds
         self.high_confidence_threshold = high_confidence_threshold
         self.medium_confidence_threshold = medium_confidence_threshold
         self.top_k_tools = top_k_tools
         
-        # Cross-encoder setup
-        self.use_cross_encoder = use_cross_encoder
-        self.cross_encoder = None
-        if use_cross_encoder:
-            try:
-                print(f"Loading cross-encoder model: {cross_encoder_model}")
-                self.cross_encoder = CrossEncoder(cross_encoder_model)
-                print("Cross-encoder loaded successfully!")
-            except Exception as e:
-                print(f"Failed to load cross-encoder: {e}")
-                print("Falling back to standard semantic routing...")
-                self.use_cross_encoder = False
-        
         # Store tools and profiles for lookup
         self.tools = {}
         self.profiles = {}
+        
+        # Store vectors for fast similarity computation
         self.tool_vectors = {}
         self.tool_examples = {}
-        self.example_embeddings = {}
-    
-    def _cross_encoder_rerank(self, query: str, candidates: List[Dict]) -> List[Dict]:
-        """Re-rank candidates using cross-encoder for fine-grained scoring."""
-        if not self.use_cross_encoder or not self.cross_encoder or not candidates:
-            return candidates
         
-        # Prepare query-tool pairs for cross-encoder
-        pairs = []
-        for candidate in candidates:
-            tool_id = candidate["tool_id"]
-            tool = self.tools.get(tool_id)
-            
-            if tool:
-                # Create rich context for cross-encoder
-                tool_context = f"Tool: {tool.name}. Description: {tool.description}"
-                
-                # Add profile context
-                profile = self.profiles.get(tool.profile_id)
-                if profile:
-                    tool_context += f" Profile: {profile.name} - {profile.description}"
-                
-                # Add examples if available
-                examples = self.tool_examples.get(tool_id, [])
-                if examples:
-                    tool_context += f" Examples: {'; '.join(examples[:3])}"
-                
-                pairs.append((query, tool_context))
-            else:
-                # Fallback if tool not found
-                pairs.append((query, f"Tool ID: {tool_id}"))
-        
-        try:
-            # Get cross-encoder scores
-            ce_scores = self.cross_encoder.predict(pairs)
-            
-            # Combine with original scores
-            for i, candidate in enumerate(candidates):
-                ce_score = float(ce_scores[i])
-                original_score = candidate["score"]
-                
-                # Weighted combination: 60% cross-encoder, 40% original
-                combined_score = 0.6 * ce_score + 0.4 * original_score
-                candidate["score"] = combined_score
-                candidate["ce_score"] = ce_score
-                candidate["original_score"] = original_score
-            
-            # Re-sort by combined score
-            candidates.sort(key=lambda x: x["score"], reverse=True)
-            
-        except Exception as e:
-            print(f"Cross-encoder scoring failed: {e}")
-            # Return original candidates if cross-encoder fails
-            pass
-        
-        return candidates
+        # Cache for example embeddings
+        self.example_embeddings = {}  # tool_id -> {example_text -> embedding}
 
     def initialize_collections(self):
         """Create or recreate vector collections."""
@@ -591,19 +525,19 @@ Example use cases:
         return np.dot(v1 / norm1, v2 / norm2)
 
     def route(self, query: str) -> RoutingResult:
-        """Route a query with cross-encoder re-ranking."""
+        """Route a query to the most appropriate tool using semantic similarity."""
         # Get query embedding with caching
         query_embedding = get_cached_embeddings([query])[0]
         
-        # Find semantically similar tools (get more candidates for re-ranking)
-        search_limit = min(20, self.top_k_tools * 2)  # Get 2x candidates for re-ranking
+        # Find semantically similar tools
         search_results = self.client.search(
             collection_name=self.tools_collection,
             query_vector=query_embedding,
-            limit=search_limit
+            limit=self.top_k_tools  # Return top matches
         )
         
         if not search_results:
+            # Handle case with no results
             return RoutingResult(
                 profile_id="web-search",
                 tool_id="web_search_deep",
@@ -612,59 +546,68 @@ Example use cases:
                 alternative_tools=[]
             )
         
-        # Process search results (existing logic)
+        # Process search results to determine best tool
         candidates = []
+        
         for hit in search_results:
             tool_id = hit.payload["id"]
             profile_id = hit.payload["profile_id"]
-            initial_score = 1.0 - hit.score
+            initial_score = 1.0 - hit.score  # Convert distance to similarity
             
+            # Extract examples for this tool
             examples = hit.payload.get("examples", [])
+            
+            # Compare query directly to example queries for this tool using cached embeddings
             example_score = 0.0
             if examples and tool_id in self.example_embeddings:
                 example_similarities = []
+                
+                # Use pre-computed example embeddings
                 for example in examples:
                     if example in self.example_embeddings[tool_id]:
                         example_embedding = self.example_embeddings[tool_id][example]
                         sim = self._compute_similarity(query_embedding, example_embedding)
                         example_similarities.append(sim)
+                
+                # Use max similarity as example score
                 example_score = max(example_similarities) if example_similarities else 0.0
             
+            # Compute additional score component - direct vector similarity
             direct_similarity = 0.0
             if tool_id in self.tool_vectors:
                 tool_vector = self.tool_vectors[tool_id]
                 direct_similarity = self._compute_similarity(query_embedding, tool_vector)
             
-            # Original combined score
+            # Calculate final score as weighted combination
             final_score = (
-                0.5 * direct_similarity +
-                0.3 * initial_score +
-                0.2 * example_score
+                0.5 * direct_similarity +  # Direct vector similarity
+                0.3 * initial_score +      # Qdrant search score
+                0.2 * example_score        # Example query similarity
             )
+            print("query", query)
+            print("direct_similarity", direct_similarity)
+            print("initial_score", initial_score)
+            print("example_score", example_score)
+            print("final_score", final_score)
             
+            # Add to candidates
             candidates.append({
                 "tool_id": tool_id,
                 "profile_id": profile_id,
                 "score": final_score
             })
         
-        # Sort by original score
+        # Sort candidates by score
         candidates.sort(key=lambda x: x["score"], reverse=True)
         
-        # Take top candidates for cross-encoder re-ranking
-        top_candidates = candidates[:self.top_k_tools]
-        
-        # Apply cross-encoder re-ranking
-        reranked_candidates = self._cross_encoder_rerank(query, top_candidates)
-        
-        # Get final top candidate
-        top_candidate = reranked_candidates[0]
+        # Get top candidate
+        top_candidate = candidates[0]
         top_score = top_candidate["score"]
         
-        # Calculate confidence with score gap consideration
-        if len(reranked_candidates) > 1:
-            score_gap = top_score - reranked_candidates[1]["score"]
-            confidence = min(95, max(40, int(top_score * 100) + int(score_gap * 50)))
+        # Calculate confidence based on score distribution
+        if len(candidates) > 1:
+            score_gap = top_score - candidates[1]["score"]  # Gap to second best
+            confidence = min(95, max(40, int(top_score * 100) + int(score_gap * 100)))
         else:
             confidence = min(95, max(40, int(top_score * 100)))
         
@@ -676,13 +619,17 @@ Example use cases:
         else:
             confidence_level = ConfidenceLevel.LOW
         
-        # Get alternatives
+        # Get alternative tools (up to 3 with reasonable confidence)
         alternative_tools = []
-        for candidate in reranked_candidates[1:4]:
-            if candidate["score"] > 0.3:
+        for candidate in candidates[1:4]:  # Next 3 candidates
+            if candidate["score"] > 0.3:  # Reasonable confidence threshold
                 alt_confidence = min(95, max(40, int(candidate["score"] * 100)))
                 alternative_tools.append((candidate["profile_id"], candidate["tool_id"], alt_confidence / 100.0))
         
+        print(top_candidate)
+
+
+        # Create result
         return RoutingResult(
             profile_id=top_candidate["profile_id"],
             tool_id=top_candidate["tool_id"],
@@ -695,8 +642,6 @@ Example use cases:
 # ---------------------------------------------------------------------------
 # Evaluation and Demo
 # ---------------------------------------------------------------------------
-
-
 def _execute_tool(result: RoutingResult, query: str):
     """Execute the selected tool and show confidence information."""
     confidence_text = {
@@ -824,57 +769,46 @@ def evaluate(router: SemanticRouter, sample_queries: List[Dict[str, Any]]) -> Di
     }
 
 
-def _execute_tool_with_ce_info(result: RoutingResult, query: str, candidates: List[Dict] = None):
-    """Execute tool with cross-encoder debugging info."""
-    confidence_text = {
-        ConfidenceLevel.HIGH: "HIGH CONFIDENCE",
-        ConfidenceLevel.MEDIUM: "MEDIUM CONFIDENCE",
-        ConfidenceLevel.LOW: "LOW CONFIDENCE"
-    }
-
-    print(f"[EXECUTE] {result.profile_id} → {result.tool_id} | '{query}' ({confidence_text[result.confidence_level]}: {result.confidence:.1f}%)")
-    
-    # Show cross-encoder scores if available
-    if candidates and len(candidates) > 0 and "ce_score" in candidates[0]:
-        print(f"[CROSS-ENCODER] Original: {candidates[0].get('original_score', 0):.3f} | CE: {candidates[0].get('ce_score', 0):.3f} | Combined: {candidates[0]['score']:.3f}")
-    
-    if result.confidence_level != ConfidenceLevel.HIGH and result.alternative_tools:
-        print(f"[ALTERNATIVES CONSIDERED]")
-        for alt_profile, alt_tool, alt_conf in result.alternative_tools:
-            print(f"  - {alt_profile} → {alt_tool} ({alt_conf*100:.1f}%)")
-
-
-# Usage example - modify your main() function:
 def main():
-    """Main function with cross-encoder routing."""
+    """Main function for running the semantic router."""
     if not _OPENAI_KEY:
         raise SystemExit("❗️OpenAI key missing.")
 
+    # Load profiles and tools from catalog
     profiles, tools = load_catalog_from_json("catalog.json")
+    
+    # Load sample queries
     sample_queries = load_sample_queries_from_json("sample_queries.json")
     
-    if not profiles or not tools or not sample_queries:
-        print("Failed to load required data files.")
+    # Check if data was loaded successfully
+    if not profiles or not tools:
+        print("Failed to load profiles and tools from catalog.json.")
+        return
+    
+    if not sample_queries:
+        print("Failed to load sample queries from sample_queries.json.")
         return
 
-    # Initialize router with cross-encoder
+    # Initialize router
     router = SemanticRouter(
         qdrant_url=_QDRANT_URL,
         qdrant_port=_QDRANT_PORT,
-        qdrant_api_key=_QDRANT_API_KEY,
-        use_cross_encoder=True  # Enable cross-encoder
+        qdrant_api_key=_QDRANT_API_KEY
     )
     
+    # Build router
     router.build(profiles, tools)
+    
+    # Evaluate performance
     evaluation_results = evaluate(router, sample_queries)
     
+    # Save results
     try:
-        with open("cross_encoder_routing_results.json", "w") as f:
+        with open("semantic_routing_results.json", "w") as f:
             json.dump(evaluation_results, f, indent=2)
-        print("Cross-encoder results saved to cross_encoder_routing_results.json")
+        print("Detailed results saved to semantic_routing_results.json")
     except Exception as e:
         print(f"Error saving results: {e}")
-
 
 
 if __name__ == "__main__":

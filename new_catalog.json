@@ -1,0 +1,1906 @@
+[
+  {
+    "name": "Stock Symbol Search API",
+    "description": "Stock Symbol Search API returns the canonical ticker symbol for any company name, brand name, or partial identifier across global exchanges. Category: reference. Use cases include ticker autocomplete in user interfaces, validating user-supplied symbols before downstream queries, bulk mapping of company names to tickers, supporting multi-exchange coverage for global portfolios, and feeding ETL pipelines that require clean symbol metadata. Parameters: required: query (string); optional: limit (number), exchange (string). Response example fields: symbol (string), name (string), currency (string), exchangeFullName (string), exchange (string).",
+    "category": "reference",
+    "use_cases": [
+      "ticker autocomplete in UI forms",
+      "validate user-supplied symbols before downstream queries",
+      "bulk mapping of company names to tickers",
+      "multi-exchange coverage for global portfolios",
+      "ETL pipelines that need clean symbol metadata"
+    ],
+    "parameters": {
+      "required": [
+        "query"
+      ],
+      "optional": [
+        "limit",
+        "exchange"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "currency": "USD",
+      "exchangeFullName": "NASDAQ Global Select",
+      "exchange": "NASDAQ"
+    }
+  },
+  {
+    "name": "Stock Symbol Search API",
+    "description": "Stock Symbol Search API provides low-latency mapping of free-text queries to equity tickers by leveraging a comprehensive index of global securities. Category: reference. Use cases cover real-time ticker suggestions in trading applications, pre-trade symbol validation in algorithmic systems, enterprise-scale bulk name-to-ticker conversion for data normalization, multi-exchange support for asset managers, and standardized symbol metadata provisioning for ETL workflows. Parameters: required: query (string); optional: limit (number), exchange (string). Response example fields include symbol (string), name (string), currency (string), exchangeFullName (string), and exchange (string).",
+    "category": "reference",
+    "use_cases": [
+      "ticker autocomplete in UI forms",
+      "validate user-supplied symbols before downstream queries",
+      "bulk mapping of company names to tickers",
+      "multi-exchange coverage for global portfolios",
+      "ETL pipelines that need clean symbol metadata"
+    ],
+    "parameters": {
+      "required": [
+        "query"
+      ],
+      "optional": [
+        "limit",
+        "exchange"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "currency": "USD",
+      "exchangeFullName": "NASDAQ Global Select",
+      "exchange": "NASDAQ"
+    }
+  },
+  {
+    "name": "Company Name Search API",
+    "description": "Company Name Search API resolves partial or full company and ETF names into ticker symbols, company names, currency, and exchange information, enabling search by asset name when the symbol is unknown. Category: reference. Use cases include user interfaces that let investors type company names to discover tickers, bulk reconciliation of legacy or ambiguous names to current symbols, multi-exchange filtering for global asset managers, ETL workflows that normalize asset identifiers, and validation of corporate references in research reports. Parameters: required: query (string); optional: limit (number), exchange (string). Response example fields: symbol (string), name (string), currency (string), exchangeFullName (string), exchange (string).",
+    "category": "reference",
+    "use_cases": [
+      "find tickers by typing partial company or ETF names",
+      "bulk mapping of asset names to ticker symbols in data pipelines",
+      "multi-exchange filtering for global portfolio coverage",
+      "validate corporate references in research reports",
+      "autocomplete ticker lookup when symbol is unknown"
+    ],
+    "parameters": {
+      "required": [
+        "query"
+      ],
+      "optional": [
+        "limit",
+        "exchange"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAGUSD",
+      "name": "AAG USD",
+      "currency": "USD",
+      "exchangeFullName": "CCC",
+      "exchange": "CRYPTO"
+    }
+  },
+  {
+    "name": "Company Name Search API",
+    "description": "Company Name Search API provides a scalable endpoint to locate ticker symbols by matching free-text company or ETF names against a global equities index. Category: reference. Use cases include real-time ticker discovery when users do not know the symbol, bulk reconciliation of old or ambiguous company names, multi-exchange filtering for diversified portfolios, data normalization in ETL pipelines, and compliance checks in research workflows. Parameters: required: query (string); optional: limit (number), exchange (string). Response example fields include symbol (string), name (string), currency (string), exchangeFullName (string), and exchange (string).",
+    "category": "reference",
+    "use_cases": [
+      "find tickers by typing partial company or ETF names",
+      "bulk mapping of asset names to ticker symbols in data pipelines",
+      "multi-exchange filtering for global portfolio coverage",
+      "validate corporate references in research reports",
+      "autocomplete ticker lookup when symbol is unknown"
+    ],
+    "parameters": {
+      "required": [
+        "query"
+      ],
+      "optional": [
+        "limit",
+        "exchange"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAGUSD",
+      "name": "AAG USD",
+      "currency": "USD",
+      "exchangeFullName": "CCC",
+      "exchange": "CRYPTO"
+    }
+  },
+  {
+    "name": "CIK API",
+    "description": "CIK API retrieves the Central Index Key (CIK) and associated company metadata—such as ticker symbol, company name, exchange, and currency—for any publicly traded issuer, streamlining access to SEC filing identifiers. Category: reference. Use cases include retrieving CIKs for automated SEC document downloads, linking equity tickers to regulatory filings, compliance workflows that require unique SEC identifiers, data pipelines that merge financial statements with market data, and validation of corporate entities in audit processes. Parameters: required: cik (string); optional: limit (number). Response example fields: symbol (string), companyName (string), cik (string), exchangeFullName (string), exchange (string), currency (string).",
+    "category": "reference",
+    "use_cases": [
+      "automate retrieval of SEC filings by CIK",
+      "link equity tickers to regulatory documents",
+      "compliance workflows requiring SEC identifiers",
+      "merge financial statements with market data in ETL pipelines",
+      "validate company entities in audit and risk systems"
+    ],
+    "parameters": {
+      "required": [
+        "cik"
+      ],
+      "optional": [
+        "limit"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "companyName": "Apple Inc.",
+      "cik": "0000320193",
+      "exchangeFullName": "NASDAQ Global Select",
+      "exchange": "NASDAQ",
+      "currency": "USD"
+    }
+  },
+  {
+    "name": "CIK API",
+    "description": "CIK API offers a low-latency lookup for Central Index Key (CIK) values and corresponding company details, enabling seamless integration with SEC filing processes. Category: reference. Use cases include auto-populating CIK fields for regulatory document retrieval, correlating tickers with SEC identifiers in compliance systems, enriching data warehouses with CIK-linked company metadata, auditing corporate entities in risk platforms, and powering ETL workflows that join financial statements to market data. Parameters: required: cik (string); optional: limit (number). Response example fields include symbol (string), companyName (string), cik (string), exchangeFullName (string), exchange (string), and currency (string).",
+    "category": "reference",
+    "use_cases": [
+      "automate retrieval of SEC filings by CIK",
+      "link equity tickers to regulatory documents",
+      "compliance workflows requiring SEC identifiers",
+      "merge financial statements with market data in ETL pipelines",
+      "validate company entities in audit and risk systems"
+    ],
+    "parameters": {
+      "required": [
+        "cik"
+      ],
+      "optional": [
+        "limit"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "companyName": "Apple Inc.",
+      "cik": "0000320193",
+      "exchangeFullName": "NASDAQ Global Select",
+      "exchange": "NASDAQ",
+      "currency": "USD"
+    }
+  },
+  {
+    "name": "CUSIP API",
+    "description": "CUSIP API returns detailed security information—such as ticker symbol, company name, CUSIP number, and market capitalization—by querying the standard CUSIP identifier for financial instruments. Category: reference. Use cases include validating CUSIP numbers in fixed-income and equity portfolios, mapping CUSIPs to tickers for index construction, enriching bond or equity data feeds with standardized identifiers, compliance checks for institutional trading desks, and ETL processes that require accurate linkage between CUSIP and market metadata. Parameters: required: cusip (string). Response example fields: symbol (string), companyName (string), cusip (string), marketCap (number).",
+    "category": "reference",
+    "use_cases": [
+      "validate CUSIP numbers in portfolio management systems",
+      "map CUSIP to ticker for index and benchmark calculations",
+      "enrich fixed-income and equity feeds with standard identifiers",
+      "compliance checks for institutional trading and custody",
+      "ETL pipelines linking CUSIP with company metadata"
+    ],
+    "parameters": {
+      "required": [
+        "cusip"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "companyName": "Apple Inc.",
+      "cusip": "037833100",
+      "marketCap": 3542555295744
+    }
+  },
+  {
+    "name": "CUSIP API",
+    "description": "CUSIP API provides a robust endpoint to look up security metadata by CUSIP number, returning ticker symbol, issuer name, and market capitalization for the specified instrument. Category: reference. Use cases include automating CUSIP validation in trading platforms, linking CUSIP identifiers to ticker symbols for index calculations, enriching financial databases with CUSIP-linked metadata, conducting compliance checks on institutional trades, and integrating CUSIP-based lookups into ETL processes for data normalization. Parameters: required: cusip (string). Response example fields include symbol (string), companyName (string), cusip (string), and marketCap (number).",
+    "category": "reference",
+    "use_cases": [
+      "validate CUSIP numbers in portfolio management systems",
+      "map CUSIP to ticker for index and benchmark calculations",
+      "enrich fixed-income and equity feeds with standard identifiers",
+      "compliance checks for institutional trading and custody",
+      "ETL pipelines linking CUSIP with company metadata"
+    ],
+    "parameters": {
+      "required": [
+        "cusip"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "companyName": "Apple Inc.",
+      "cusip": "037833100",
+      "marketCap": 3542555295744
+    }
+  },
+  {
+    "name": "ISIN API",
+    "description": "ISIN API fetches the International Securities Identification Number (ISIN), ticker symbol, company name, and market capitalization for any financial security, facilitating global identification across markets. Category: reference. Use cases include mapping ISINs to local exchange tickers, validating international securities in cross-border portfolios, enriching data warehouses with ISIN-linked metadata, compliance workflows requiring global security identifiers, and ETL processes that standardize instrument identifiers for reporting and analytics. Parameters: required: isin (string). Response example fields: symbol (string), name (string), isin (string), and marketCap (number).",
+    "category": "reference",
+    "use_cases": [
+      "map ISIN to local exchange tickers in global portfolios",
+      "validate international securities in compliance checks",
+      "enrich data warehouses with ISIN-linked metadata",
+      "standardize instrument identifiers in ETL workflows",
+      "support cross-border reporting with global security IDs"
+    ],
+    "parameters": {
+      "required": [
+        "isin"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "isin": "US0378331005",
+      "marketCap": 3427916386000
+    }
+  },
+  {
+    "name": "ISIN API",
+    "description": "ISIN API provides a comprehensive lookup for International Securities Identification Numbers, returning associated ticker symbol, issuer name, and market capitalization for any security. Category: reference. Use cases include validating and mapping ISIN codes to exchange-specific tickers, integrating global security identifiers into compliance platforms, enriching analytics databases with ISIN-based metadata, automating instrument identification in cross-border ETFs, and standardizing identifiers in ETL workflows. Parameters: required: isin (string). Response example fields include symbol (string), name (string), isin (string), and marketCap (number).",
+    "category": "reference",
+    "use_cases": [
+      "map ISIN to local exchange tickers in global portfolios",
+      "validate international securities in compliance checks",
+      "enrich data warehouses with ISIN-linked metadata",
+      "standardize instrument identifiers in ETL workflows",
+      "support cross-border reporting with global security IDs"
+    ],
+    "parameters": {
+      "required": [
+        "isin"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "isin": "US0378331005",
+      "marketCap": 3427916386000
+    }
+  },
+  {
+    "name": "Stock Screener API",
+    "description": "Stock Screener API enables dynamic filtering of equities based on financial and market criteria—such as market capitalization, price, volume, beta, sector, industry, dividend yield, exchange, country, and trading status—to identify stocks matching specific investment strategies. Category: market-data. Use cases include building custom screeners for retail and institutional investors, powering watchlists that automatically update by predefined filters, research workflows that require filtering by sector or financial metrics, automated alerts when stocks meet screening criteria, and ETL pipelines that ingest filtered equity universes for quantitative modeling. Parameters include required filters: marketCapMoreThan (number), marketCapLowerThan (number), sector (string), industry (string), betaMoreThan (number), betaLowerThan (number), priceMoreThan (number), priceLowerThan (number), dividendMoreThan (number), dividendLowerThan (number), volumeMoreThan (number), volumeLowerThan (number), exchange (string), country (string), isEtf (boolean), isFund (boolean), isActivelyTrading (boolean), limit (number), includeAllShareClasses (boolean). Response example fields: symbol (string), companyName (string), marketCap (number), sector (string), industry (string), beta (number), price (number), lastAnnualDividend (number), volume (number), exchange (string), exchangeShortName (string), country (string), isEtf (boolean), isFund (boolean), isActivelyTrading (boolean).",
+    "category": "market-data",
+    "use_cases": [
+      "build custom screeners for retail and institutional investors",
+      "power dynamic watchlists that update by filter criteria",
+      "research workflows filtering by sector or financial metrics",
+      "automated alerts when equities meet screening thresholds",
+      "ETL pipelines ingesting filtered equity universes for modeling"
+    ],
+    "parameters": {
+      "required": [
+        "marketCapMoreThan",
+        "marketCapLowerThan",
+        "sector",
+        "industry",
+        "betaMoreThan",
+        "betaLowerThan",
+        "priceMoreThan",
+        "priceLowerThan",
+        "dividendMoreThan",
+        "dividendLowerThan",
+        "volumeMoreThan",
+        "volumeLowerThan",
+        "exchange",
+        "country",
+        "isEtf",
+        "isFund",
+        "isActivelyTrading",
+        "limit",
+        "includeAllShareClasses"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "companyName": "Apple Inc.",
+      "marketCap": 3435062313000,
+      "sector": "Technology",
+      "industry": "Consumer Electronics",
+      "beta": 1.24,
+      "price": 225.93,
+      "lastAnnualDividend": 1,
+      "volume": 43010091,
+      "exchange": "NASDAQ Global Select",
+      "exchangeShortName": "NASDAQ",
+      "country": "US",
+      "isEtf": false,
+      "isFund": false,
+      "isActivelyTrading": true
+    }
+  },
+  {
+    "name": "Stock Screener API",
+    "description": "Stock Screener API offers a flexible endpoint to discover equities by applying multiple filters—such as market capitalization range, price range, trading volume, beta, sector, industry, dividend thresholds, exchange, and country—to generate targeted stock lists. Category: market-data. Use cases include launching investor-facing stock screeners, driving automated watchlists for portfolio managers, filtering large equity universes for research purposes, triggering event-based alerts when screening criteria are met, and integrating filtered equity data into ETL pipelines for quantitative analysis. Parameters include: marketCapMoreThan (number), marketCapLowerThan (number), sector (string), industry (string), betaMoreThan (number), betaLowerThan (number), priceMoreThan (number), priceLowerThan (number), dividendMoreThan (number), dividendLowerThan (number), volumeMoreThan (number), volumeLowerThan (number), exchange (string), country (string), isEtf (boolean), isFund (boolean), isActivelyTrading (boolean), limit (number), includeAllShareClasses (boolean). Response example fields: symbol, companyName, marketCap, sector, industry, beta, price, lastAnnualDividend, volume, exchange, exchangeShortName, country, isEtf, isFund, isActivelyTrading.",
+    "category": "market-data",
+    "use_cases": [
+      "build custom screeners for retail and institutional investors",
+      "power dynamic watchlists that update by filter criteria",
+      "research workflows filtering by sector or financial metrics",
+      "automated alerts when equities meet screening thresholds",
+      "ETL pipelines ingesting filtered equity universes for modeling"
+    ],
+    "parameters": {
+      "required": [
+        "marketCapMoreThan",
+        "marketCapLowerThan",
+        "sector",
+        "industry",
+        "betaMoreThan",
+        "betaLowerThan",
+        "priceMoreThan",
+        "priceLowerThan",
+        "dividendMoreThan",
+        "dividendLowerThan",
+        "volumeMoreThan",
+        "volumeLowerThan",
+        "exchange",
+        "country",
+        "isEtf",
+        "isFund",
+        "isActivelyTrading",
+        "limit",
+        "includeAllShareClasses"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "companyName": "Apple Inc.",
+      "marketCap": 3435062313000,
+      "sector": "Technology",
+      "industry": "Consumer Electronics",
+      "beta": 1.24,
+      "price": 225.93,
+      "lastAnnualDividend": 1,
+      "volume": 43010091,
+      "exchange": "NASDAQ Global Select",
+      "exchangeShortName": "NASDAQ",
+      "country": "US",
+      "isEtf": false,
+      "isFund": false,
+      "isActivelyTrading": true
+    }
+  },
+  {
+    "name": "Exchange Variants API",
+    "description": "Exchange Variants API lists all exchanges where a given security is actively traded, returning detailed metadata such as current price, beta, average volume, market capitalization, last dividend, trading range, price changes, company name, currency, CIK, ISIN, CUSIP, exchange details, industry, website, corporate description, CEO, sector, country, employee count, contact information, address, DCF values, image URL, IPO date, and trading flags. Category: market-data. Use cases include displaying global listing venues for a security in portfolio dashboards, enriching research platforms with multi-exchange data, validating listing venues in compliance workflows, consolidating exchange-specific details in ETL processes, and enabling cross-listed equity analytics. Parameters: required: symbol (string). Response example fields include symbol (string), price (number), beta (number), volAvg (number), mktCap (number), lastDiv (number), range (string), changes (number), companyName (string), currency (string), cik (string), isin (string), cusip (string), exchange (string), exchangeShortName (string), industry (string), website (string), description (string), ceo (string), sector (string), country (string), fullTimeEmployees (string), phone (string), address (string), city (string), state (string), zip (string), dcfDiff (number), dcf (number), image (string), ipoDate (string), defaultImage (boolean), isEtf (boolean), isActivelyTrading (boolean), isAdr (boolean), isFund (boolean).",
+    "category": "market-data",
+    "use_cases": [
+      "display all global exchange listings for a security in portfolio dashboards",
+      "enrich security profiles with multi-exchange metadata for research platforms",
+      "validate listing venues in compliance and regulatory workflows",
+      "ETL processes consolidating exchange-specific details into data warehouses",
+      "enable analytics on cross-listed equities for quantitative models"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "price": 225.46,
+      "beta": 1.24,
+      "volAvg": 54722288,
+      "mktCap": 3427916386000,
+      "lastDiv": 1,
+      "range": "164.08-237.23",
+      "changes": -7.54,
+      "companyName": "Apple Inc.",
+      "currency": "USD",
+      "cik": "0000320193",
+      "isin": "US0378331005",
+      "cusip": "037833100",
+      "exchange": "NASDAQ Global Select",
+      "exchangeShortName": "NASDAQ",
+      "industry": "Consumer Electronics",
+      "website": "https://www.apple.com",
+      "description": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, and HomePod. It also provides AppleCare support and cloud services; and operates various platforms, including the App Store that allow customers to discover, download, and purchase applications.",
+      "ceo": "Mr. Timothy D. Cook",
+      "sector": "Technology",
+      "country": "US",
+      "fullTimeEmployees": "161000",
+      "phone": "408 996 1010",
+      "address": "One Apple Park Way",
+      "city": "Cupertino",
+      "state": "CA",
+      "zip": "95014",
+      "dcfDiff": 62.45842,
+      "dcf": 161.68157666868984,
+      "image": "https://financialmodelingprep.com/image-stock/AAPL.png",
+      "ipoDate": "1980-12-12",
+      "defaultImage": false,
+      "isEtf": false,
+      "isActivelyTrading": true,
+      "isAdr": false,
+      "isFund": false
+    }
+  },
+  {
+    "name": "Exchange Variants API",
+    "description": "Exchange Variants API provides a comprehensive view of all exchanges where a security is listed, returning extensive metadata including current market data (price, beta, average volume, market cap, last dividend, trading range, and changes), corporate identifiers (CIK, ISIN, CUSIP), company profile details (name, description, industry, website, CEO, sector, country, employee count, contact information, address), financial analysis metrics (DCF, DCF_DIFF), image URL, IPO date, and trading flags (isEtf, isActivelyTrading, isAdr, isFund). Category: market-data. Use cases include building portfolio dashboards that display global listings, enriching research databases with multi-exchange details, validating exchange venues in compliance systems, consolidating exchange-specific data in ETL pipelines, and powering analytics on cross-listed equities. Parameters: required: symbol (string). Response example fields include symbol, price, beta, volAvg, mktCap, lastDiv, range, changes, companyName, currency, cik, isin, cusip, exchange, exchangeShortName, industry, website, description, ceo, sector, country, fullTimeEmployees, phone, address, city, state, zip, dcfDiff, dcf, image, ipoDate, defaultImage, isEtf, isActivelyTrading, isAdr, isFund.",
+    "category": "market-data",
+    "use_cases": [
+      "display all global exchange listings for a security in portfolio dashboards",
+      "enrich security profiles with multi-exchange metadata for research platforms",
+      "validate listing venues in compliance and regulatory workflows",
+      "ETL processes consolidating exchange-specific details into data warehouses",
+      "enable analytics on cross-listed equities for quantitative models"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "price": 225.46,
+      "beta": 1.24,
+      "volAvg": 54722288,
+      "mktCap": 3427916386000,
+      "lastDiv": 1,
+      "range": "164.08-237.23",
+      "changes": -7.54,
+      "companyName": "Apple Inc.",
+      "currency": "USD",
+      "cik": "0000320193",
+      "isin": "US0378331005",
+      "cusip": "037833100",
+      "exchange": "NASDAQ Global Select",
+      "exchangeShortName": "NASDAQ",
+      "industry": "Consumer Electronics",
+      "website": "https://www.apple.com",
+      "description": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, and HomePod. It also provides AppleCare support and cloud services; and operates various platforms, including the App Store that allow customers to discover, download, and purchase applications.",
+      "ceo": "Mr. Timothy D. Cook",
+      "sector": "Technology",
+      "country": "US",
+      "fullTimeEmployees": "161000",
+      "phone": "408 996 1010",
+      "address": "One Apple Park Way",
+      "city": "Cupertino",
+      "state": "CA",
+      "zip": "95014",
+      "dcfDiff": 62.45842,
+      "dcf": 161.68157666868984,
+      "image": "https://financialmodelingprep.com/image-stock/AAPL.png",
+      "ipoDate": "1980-12-12",
+      "defaultImage": false,
+      "isEtf": false,
+      "isActivelyTrading": true,
+      "isAdr": false,
+      "isFund": false
+    }
+  },
+  {
+    "name": "Company Symbols List API",
+    "description": "Company Symbols List API returns a comprehensive directory of tradable symbols and associated company names across global exchanges. Category: reference. Use cases include populating symbol directories for trading platforms, synchronizing local equity databases with a master list, driving autocomplete lists in front-end applications, enabling bulk imports of available securities for data analysis, and ensuring coverage of all active listings in portfolio management systems. Parameters: none. Response example fields: symbol (string), companyName (string).",
+    "category": "reference",
+    "use_cases": [
+      "populate symbol directories for trading platforms",
+      "synchronize local equity databases with a master list",
+      "drive autocomplete lists in front-end applications",
+      "enable bulk imports of available securities for data analysis",
+      "ensure coverage of all active listings in portfolio management systems"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "6898.HK",
+      "companyName": "China Aluminum Cans Holdings Limited"
+    }
+  },
+  {
+    "name": "Company Symbols List API",
+    "description": "Company Symbols List API provides a full listing of equity and instrument symbols along with their company names, enabling developers to retrieve the entire universe of tradable securities. Category: reference. Use cases cover building master symbol tables for ETL pipelines, driving drop-down selections in trading applications, validating symbol existence before order placement, feeding data warehouses with up-to-date symbol inventories, and supporting backtesting frameworks with a complete list of securities. Parameters: none. Response example fields: symbol (string), companyName (string).",
+    "category": "reference",
+    "use_cases": [
+      "build master symbol tables for ETL pipelines",
+      "drive drop-down selections in trading applications",
+      "validate symbol existence before order placement",
+      "feed data warehouses with up-to-date symbol inventories",
+      "support backtesting frameworks with a complete list of securities"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "6898.HK",
+      "companyName": "China Aluminum Cans Holdings Limited"
+    }
+  },
+  {
+    "name": "Financial Statement Symbols List API",
+    "description": "Financial Statement Symbols List API returns a catalog of symbols and company names for entities with available financial statements, along with their trading and reporting currencies. Category: reference. Use cases include identifying companies for financial analysis, populating data pipelines with symbols that have accessible balance sheets, income statements, and cash flow data, driving screening tools that filter by reporting currency, supporting regulatory reporting workflows, and enabling ETL jobs to target entities with full financial disclosures. Parameters: none. Response example fields: symbol (string), companyName (string), tradingCurrency (string), reportingCurrency (string).",
+    "category": "reference",
+    "use_cases": [
+      "identify companies for financial analysis",
+      "populate data pipelines with symbols that have accessible financial statements",
+      "drive screening tools that filter by reporting currency",
+      "support regulatory reporting workflows",
+      "enable ETL jobs to target entities with full financial disclosures"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "6898.HK",
+      "companyName": "China Aluminum Cans Holdings Limited",
+      "tradingCurrency": "HKD",
+      "reportingCurrency": "HKD"
+    }
+  },
+  {
+    "name": "Financial Statement Symbols List API",
+    "description": "Financial Statement Symbols List API provides a detailed list of companies for which income statements, balance sheets, and cash flow statements are available, including trading and reporting currency information. Category: reference. Use cases include streaming symbol lists into analytics platforms for ratio calculations, automating financial data ingestion for modeling, filtering companies by reporting currency for regional studies, maintaining compliance by ensuring coverage of all entities with public filings, and powering dashboards that track financial coverage. Parameters: none. Response example fields: symbol (string), companyName (string), tradingCurrency (string), reportingCurrency (string).",
+    "category": "reference",
+    "use_cases": [
+      "stream symbol lists into analytics platforms for ratio calculations",
+      "automate financial data ingestion for modeling",
+      "filter companies by reporting currency for regional studies",
+      "maintain compliance by ensuring coverage of all entities with public filings",
+      "power dashboards that track financial coverage"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "6898.HK",
+      "companyName": "China Aluminum Cans Holdings Limited",
+      "tradingCurrency": "HKD",
+      "reportingCurrency": "HKD"
+    }
+  },
+  {
+    "name": "CIK List API",
+    "description": "CIK List API provides a directory of Central Index Key (CIK) numbers and corresponding company names for SEC-registered entities. Category: reference. Use cases include creating lookup tables for automated SEC filing retrieval, populating compliance databases with valid CIK values, merging market data with regulatory identifiers, driving risk-management tools that verify entity registration, and enabling ETL processes to enrich company records with CIK information. Parameters: required: limit (number). Response example fields: cik (string), companyName (string).",
+    "category": "reference",
+    "use_cases": [
+      "create lookup tables for automated SEC filing retrieval",
+      "populate compliance databases with valid CIK values",
+      "merge market data with regulatory identifiers",
+      "drive risk-management tools that verify entity registration",
+      "enable ETL processes to enrich company records with CIK information"
+    ],
+    "parameters": {
+      "required": [
+        "limit"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "cik": "0002036063",
+      "companyName": "LUZ Capital Partners, LLC"
+    }
+  },
+  {
+    "name": "CIK List API",
+    "description": "CIK List API returns a complete set of CIK identifiers paired with company names for all entities registered with the SEC, supporting scalable retrieval of regulatory keys. Category: reference. Use cases include bulk ingestion of CIK data for financial databases, verifying CIK consistency in compliance audits, automating match routines between equity tickers and CIK numbers, maintaining up-to-date CIK registries in risk surveillance systems, and powering dashboards that track entity registrations. Parameters: required: limit (number). Response example fields: cik (string), companyName (string).",
+    "category": "reference",
+    "use_cases": [
+      "bulk ingestion of CIK data for financial databases",
+      "verify CIK consistency in compliance audits",
+      "automate match routines between equity tickers and CIK numbers",
+      "maintain up-to-date CIK registries in risk surveillance systems",
+      "power dashboards that track entity registrations"
+    ],
+    "parameters": {
+      "required": [
+        "limit"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "cik": "0002036063",
+      "companyName": "LUZ Capital Partners, LLC"
+    }
+  },
+  {
+    "name": "Symbol Changes List API",
+    "description": "Symbol Changes List API provides a chronological list of stock symbol changes—such as ticker renames, mergers, acquisitions, and stock splits—along with associated company names and change dates. Category: reference. Use cases include updating symbol-to-company mappings in databases, tracking ticker history for historical data analysis, alerting systems when companies change their trading symbols, maintaining audit trails for corporate actions, and driving ETL jobs that reconcile old and new symbols in time-series data. Parameters: required: invalid (string), limit (number). Response example fields: date (string), companyName (string), oldSymbol (string), newSymbol (string).",
+    "category": "reference",
+    "use_cases": [
+      "update symbol-to-company mappings in databases",
+      "track ticker history for historical data analysis",
+      "trigger alerts when companies change their trading symbols",
+      "maintain audit trails for corporate actions",
+      "drive ETL jobs that reconcile old and new symbols in time-series data"
+    ],
+    "parameters": {
+      "required": [
+        "invalid",
+        "limit"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "date": "2025-02-03",
+      "companyName": "XPLR Infrastructure, LP Common Units representing limited partner interests",
+      "oldSymbol": "NEP",
+      "newSymbol": "XIFR"
+    }
+  },
+  {
+    "name": "Symbol Changes List API",
+    "description": "Symbol Changes List API delivers a full record of ticker symbol transitions, including effective dates and corporate context, to ensure systems remain aligned with current trading identifiers. Category: reference. Use cases cover automated reconciliation of historical datasets when tickers are updated, enriching backtesting frameworks with accurate symbol change timelines, ensuring portfolio systems reflect current company symbols post-merger or split, integrating with compliance modules to validate corporate actions, and enabling data ingestion processes to map legacy symbols to new ones. Parameters: required: invalid (string), limit (number). Response example fields: date (string), companyName (string), oldSymbol (string), newSymbol (string).",
+    "category": "reference",
+    "use_cases": [
+      "automated reconciliation of historical datasets when tickers are updated",
+      "enrich backtesting frameworks with accurate symbol change timelines",
+      "ensure portfolio systems reflect current company symbols post-merger or split",
+      "integrate with compliance modules to validate corporate actions",
+      "enable data ingestion processes to map legacy symbols to new ones"
+    ],
+    "parameters": {
+      "required": [
+        "invalid",
+        "limit"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "date": "2025-02-03",
+      "companyName": "XPLR Infrastructure, LP Common Units representing limited partner interests",
+      "oldSymbol": "NEP",
+      "newSymbol": "XIFR"
+    }
+  },
+  {
+    "name": "ETF Symbol Search API",
+    "description": "ETF Symbol Search API returns a list of ETF tickers and associated fund names, enabling users to discover exchange-traded funds by symbol or partial name match. Category: reference. Use cases include populating ETF selection lists in robo-advisor platforms, enabling search functionality in fund research tools, automating portfolio rebalancing that includes ETF instruments, driving ETL pipelines that ingest ETF universes for modeling, and supporting dashboards that track fund availability. Parameters: none. Response example fields: symbol (string), name (string).",
+    "category": "reference",
+    "use_cases": [
+      "populate ETF selection lists in robo-advisor platforms",
+      "enable search functionality in fund research tools",
+      "automate portfolio rebalancing that includes ETF instruments",
+      "drive ETL pipelines that ingest ETF universes for modeling",
+      "support dashboards that track fund availability"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "GULF",
+      "name": "WisdomTree Middle East Dividend Fund"
+    }
+  },
+  {
+    "name": "ETF Symbol Search API",
+    "description": "ETF Symbol Search API provides an index of all exchange-traded fund symbols and fund names, allowing quick identification of ETFs by ticker or name. Category: reference. Use cases include building ETF lookup tables for financial applications, driving real-time autocomplete for fund selection in trading UIs, synchronizing ETF listings in data warehouses, enabling research workflows that filter by ETF name patterns, and ensuring coverage of all active ETF instruments in portfolio analytics. Parameters: none. Response example fields: symbol (string), name (string).",
+    "category": "reference",
+    "use_cases": [
+      "build ETF lookup tables for financial applications",
+      "drive real-time autocomplete for fund selection in trading UIs",
+      "synchronize ETF listings in data warehouses",
+      "enable research workflows that filter by ETF name patterns",
+      "ensure coverage of all active ETF instruments in portfolio analytics"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "GULF",
+      "name": "WisdomTree Middle East Dividend Fund"
+    }
+  },
+  {
+    "name": "Actively Trading List API",
+    "description": "Actively Trading List API returns a list of symbols and company names for all securities currently trading on public exchanges, ensuring real-time coverage of market activity. Category: reference. Use cases include generating watchlists of actively traded securities, fueling market data dashboards with live listings, driving ETL processes that focus only on instruments with current trading volume, powering algorithmic strategies that require active ticker universes, and maintaining compliance systems with up-to-date trading lists. Parameters: none. Response example fields: symbol (string), name (string).",
+    "category": "reference",
+    "use_cases": [
+      "generate watchlists of actively traded securities",
+      "fuel market data dashboards with live listings",
+      "drive ETL processes that focus only on instruments with current trading volume",
+      "power algorithmic strategies that require active ticker universes",
+      "maintain compliance systems with up-to-date trading lists"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "6898.HK",
+      "name": "China Aluminum Cans Holdings Limited"
+    }
+  },
+  {
+    "name": "Actively Trading List API",
+    "description": "Actively Trading List API provides an up-to-the-minute directory of all symbols and their corresponding names that are trading on exchanges, enabling applications to filter out inactive listings. Category: reference. Use cases include driving live trading filters for portfolio managers, building real-time trading screens for front-end platforms, synchronizing active ticker universes in data platforms, triggering alerts when new symbols begin or cease trading, and supporting backtesting frameworks that exclude inactive securities. Parameters: none. Response example fields: symbol (string), name (string).",
+    "category": "reference",
+    "use_cases": [
+      "drive live trading filters for portfolio managers",
+      "build real-time trading screens for front-end platforms",
+      "synchronize active ticker universes in data platforms",
+      "trigger alerts when new symbols begin or cease trading",
+      "support backtesting frameworks that exclude inactive securities"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "6898.HK",
+      "name": "China Aluminum Cans Holdings Limited"
+    }
+  },
+  {
+    "name": "Earnings Transcript List API",
+    "description": "Earnings Transcript List API returns a list of company symbols, names, and the number of available earnings call transcripts, enabling applications to identify companies with accessible transcript archives. Category: reference. Use cases include populating transcript libraries for financial research tools, driving search functionality for earnings call content, enabling alert systems when new transcripts become available, integrating transcript counts into corporate analytics dashboards, and powering ETL workflows that ingest textual data for sentiment analysis. Parameters: none. Response example fields: symbol (string), companyName (string), noOfTranscripts (string).",
+    "category": "reference",
+    "use_cases": [
+      "populate transcript libraries for financial research tools",
+      "drive search functionality for earnings call content",
+      "enable alert systems when new transcripts become available",
+      "integrate transcript counts into corporate analytics dashboards",
+      "power ETL workflows that ingest textual data for sentiment analysis"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "MCUJF",
+      "companyName": "Medicure Inc.",
+      "noOfTranscripts": "16"
+    }
+  },
+  {
+    "name": "Earnings Transcript List API",
+    "description": "Earnings Transcript List API provides a comprehensive directory of companies with available earnings call transcripts, along with the total count of transcripts for each entity. Category: reference. Use cases include automating transcript availability checks in research platforms, building transcript-focused dashboards for analysts, driving ETL jobs that ingest transcript metadata for NLP pipelines, alerting users when new transcript batches are added, and maintaining compliance archives of corporate communications. Parameters: none. Response example fields: symbol (string), companyName (string), noOfTranscripts (string).",
+    "category": "reference",
+    "use_cases": [
+      "automate transcript availability checks in research platforms",
+      "build transcript-focused dashboards for analysts",
+      "drive ETL jobs that ingest transcript metadata for NLP pipelines",
+      "alert users when new transcript batches are added",
+      "maintain compliance archives of corporate communications"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "MCUJF",
+      "companyName": "Medicure Inc.",
+      "noOfTranscripts": "16"
+    }
+  },
+  {
+    "name": "Available Exchanges API",
+    "description": "Available Exchanges API returns a comprehensive list of all stock exchanges supported by the platform, enabling users to identify where securities are traded globally. Category: reference. Use cases include populating exchange dropdowns in trading applications, filtering market data by exchange, validating exchange codes in order-entry systems, driving ETL pipelines that segment data by trading venue, and enriching research workflows with exchange-level context. Parameters: none. Response example fields: exchange (string).",
+    "category": "reference",
+    "use_cases": [
+      "populate exchange dropdowns in trading applications",
+      "filter market data by exchange",
+      "validate exchange codes in order-entry systems",
+      "drive ETL pipelines that segment data by trading venue",
+      "enrich research workflows with exchange-level context"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "exchange": "AMEX"
+    }
+  },
+  {
+    "name": "Available Exchanges API",
+    "description": "Available Exchanges API provides a master list of global stock exchanges, allowing developers to retrieve all supported trading venues and their codes. Category: reference. Use cases include building exchange lookup services for portfolio management tools, synchronizing local exchange metadata with the platform’s list, driving compliance checks that require valid exchange identifiers, integrating with data warehouses for exchange-based partitioning, and enabling analytics dashboards to segment metrics by exchange. Parameters: none. Response example fields: exchange (string).",
+    "category": "reference",
+    "use_cases": [
+      "build exchange lookup services for portfolio management tools",
+      "synchronize local exchange metadata with the platform’s list",
+      "drive compliance checks that require valid exchange identifiers",
+      "integrate with data warehouses for exchange-based partitioning",
+      "enable analytics dashboards to segment metrics by exchange"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "exchange": "AMEX"
+    }
+  },
+  {
+    "name": "Available Sectors API",
+    "description": "Available Sectors API returns a full list of industry sectors in which companies are categorized, enabling users to filter and analyze securities by sector. Category: reference. Use cases include populating sector filters in screening tools, driving sector-based portfolio allocations, validating sector inputs in data-entry forms, integrating sector lists into ETL pipelines for industry-level aggregation, and enriching research workflows with sector classification. Parameters: none. Response example fields: sector (string).",
+    "category": "reference",
+    "use_cases": [
+      "populate sector filters in screening tools",
+      "drive sector-based portfolio allocations",
+      "validate sector inputs in data-entry forms",
+      "integrate sector lists into ETL pipelines for industry-level aggregation",
+      "enrich research workflows with sector classification"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "sector": "Basic Materials"
+    }
+  },
+  {
+    "name": "Available Sectors API",
+    "description": "Available Sectors API provides a registry of all industry sectors, allowing developers to retrieve valid sector names for categorizing equities and industry analysis. Category: reference. Use cases include building industry classification modules for research platforms, synchronizing sector metadata in data warehouses, powering UI dropdowns for sector selection, validating sector codes in compliance and reporting tools, and enabling analytics dashboards to aggregate performance by sector. Parameters: none. Response example fields: sector (string).",
+    "category": "reference",
+    "use_cases": [
+      "build industry classification modules for research platforms",
+      "synchronize sector metadata in data warehouses",
+      "power UI dropdowns for sector selection",
+      "validate sector codes in compliance and reporting tools",
+      "enable analytics dashboards to aggregate performance by sector"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "sector": "Basic Materials"
+    }
+  },
+  {
+    "name": "Available Industries API",
+    "description": "Available Industries API returns a complete list of industries where stock symbols are available, enabling users to filter and categorize companies based on specific industry segments. Category: reference. Use cases include populating industry filters in stock screeners, driving ETL workflows that segment data by industry, validating industry inputs in data-entry systems, synchronizing local industry metadata with the platform, and enriching research workflows with industry-level insights. Parameters: none. Response example fields: industry (string).",
+    "category": "reference",
+    "use_cases": [
+      "populate industry filters in stock screeners",
+      "drive ETL workflows that segment data by industry",
+      "validate industry inputs in data-entry systems",
+      "synchronize local industry metadata with the platform",
+      "enrich research workflows with industry-level insights"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "industry": "Steel"
+    }
+  },
+  {
+    "name": "Available Industries API",
+    "description": "Available Industries API provides a detailed registry of all industry names, allowing developers to retrieve valid industry classifications for equities. Category: reference. Use cases include building industry mapping tables for analytics platforms, synchronizing industry metadata in data warehouses, powering UI components for industry selection, validating industry fields in compliance and reporting modules, and enabling dashboards to aggregate metrics by industry. Parameters: none. Response example fields: industry (string).",
+    "category": "reference",
+    "use_cases": [
+      "build industry mapping tables for analytics platforms",
+      "synchronize industry metadata in data warehouses",
+      "power UI components for industry selection",
+      "validate industry fields in compliance and reporting modules",
+      "enable dashboards to aggregate metrics by industry"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "industry": "Steel"
+    }
+  },
+  {
+    "name": "Available Countries API",
+    "description": "Available Countries API returns a list of country codes where stock symbols are available, enabling users to filter and analyze securities by geographic region. Category: reference. Use cases include populating country filters in screening tools, driving ETL pipelines that segment data by country, validating country inputs in data-entry forms, synchronizing local country metadata with the platform, and enriching research workflows with country-level context. Parameters: none. Response example fields: country (string).",
+    "category": "reference",
+    "use_cases": [
+      "populate country filters in screening tools",
+      "drive ETL pipelines that segment data by country",
+      "validate country inputs in data-entry forms",
+      "synchronize local country metadata with the platform",
+      "enrich research workflows with country-level context"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "country": "FK"
+    }
+  },
+  {
+    "name": "Available Countries API",
+    "description": "Available Countries API provides a master list of all country codes associated with tradable securities, allowing developers to retrieve valid country identifiers for equities. Category: reference. Use cases include building geographic filtering modules for portfolio tools, synchronizing country metadata in data warehouses, powering UI dropdowns for country selection, validating country codes in compliance and reporting systems, and enabling analytics dashboards to aggregate performance by country. Parameters: none. Response example fields: country (string).",
+    "category": "reference",
+    "use_cases": [
+      "build geographic filtering modules for portfolio tools",
+      "synchronize country metadata in data warehouses",
+      "power UI dropdowns for country selection",
+      "validate country codes in compliance and reporting systems",
+      "enable analytics dashboards to aggregate performance by country"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "country": "FK"
+    }
+  },
+  {
+    "name": "Stock Chart Light API",
+    "description": "Stock Chart Light API returns essential end-of-day data—date, price, and trading volume—for a specified stock symbol over a given date range. Category: market-data. Use cases include building lightweight price/volume charts for mobile or low-bandwidth clients, performing quick trend analysis with minimal payload, integrating simplified historical data into dashboards, validating date-based price movements, and populating sparklines in UI components. Parameters: required: symbol (string); optional: from (date), to (date). Response example fields: symbol (string), date (string, YYYY-MM-DD), price (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "build lightweight price/volume charts for mobile or low-bandwidth clients",
+      "perform quick trend analysis with minimal payload",
+      "integrate simplified historical data into dashboards",
+      "validate date-based price movements",
+      "populate sparklines in UI components"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "date": "2025-02-04",
+      "price": 232.8,
+      "volume": 44489128
+    }
+  },
+  {
+    "name": "Stock Chart Light API",
+    "description": "Stock Chart Light API provides a streamlined dataset of daily price and volume for a given ticker within a date window, making it ideal for quick chart rendering and preliminary analysis. Category: market-data. Use cases include populating basic price/volume graphs in web apps, driving low-latency data feeds for dashboards, performing rapid backtesting subsampling, enabling performance monitoring with minimal overhead, and validating historical data pipelines. Parameters: required: symbol (string); optional: from (date), to (date). Response example fields: symbol (string), date (string, YYYY-MM-DD), price (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "populate basic price/volume graphs in web apps",
+      "drive low-latency data feeds for dashboards",
+      "perform rapid backtesting subsampling",
+      "enable performance monitoring with minimal overhead",
+      "validate historical data pipelines"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "date": "2025-02-04",
+      "price": 232.8,
+      "volume": 44489128
+    }
+  },
+  {
+    "name": "Stock Price and Volume Data API",
+    "description": "Stock Price and Volume Data API delivers comprehensive end-of-day metrics—including open, high, low, close, volume, price change, percent change, and VWAP—for a specified symbol over a date range. Category: market-data. Use cases include feeding detailed historical datasets into quantitative models, generating candlestick or OHLC charts, performing volatility analysis with full price range, integrating volume-weighted price calculations into reports, and driving trading strategy backtests. Parameters: required: symbol (string); optional: from (date), to (date). Response example fields: symbol (string), date (string, YYYY-MM-DD), open (number), high (number), low (number), close (number), volume (number), change (number), changePercent (number), vwap (number).",
+    "category": "market-data",
+    "use_cases": [
+      "feed detailed historical datasets into quantitative models",
+      "generate candlestick or OHLC charts",
+      "perform volatility analysis with full price range",
+      "integrate volume-weighted price calculations into reports",
+      "drive trading strategy backtests"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "date": "2025-02-04",
+      "open": 227.2,
+      "high": 233.13,
+      "low": 226.65,
+      "close": 232.8,
+      "volume": 44489128,
+      "change": 5.6,
+      "changePercent": 2.46479,
+      "vwap": 230.86
+    }
+  },
+  {
+    "name": "Stock Price and Volume Data API",
+    "description": "Stock Price and Volume Data API provides full OHLC and volume information, along with daily change metrics and VWAP, for any equity over a specified period. Category: market-data. Use cases include sourcing rich historical price series for research, powering interactive charting libraries, conducting return and performance attribution analysis, validating algorithmic trading signals, and populating financial dashboards with detailed price movements. Parameters: required: symbol (string); optional: from (date), to (date). Response example fields: symbol (string), date (string, YYYY-MM-DD), open (number), high (number), low (number), close (number), volume (number), change (number), changePercent (number), vwap (number).",
+    "category": "market-data",
+    "use_cases": [
+      "source rich historical price series for research",
+      "power interactive charting libraries",
+      "conduct return and performance attribution analysis",
+      "validate algorithmic trading signals",
+      "populate financial dashboards with detailed price movements"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "date": "2025-02-04",
+      "open": 227.2,
+      "high": 233.13,
+      "low": 226.65,
+      "close": 232.8,
+      "volume": 44489128,
+      "change": 5.6,
+      "changePercent": 2.46479,
+      "vwap": 230.86
+    }
+  },
+  {
+    "name": "Unadjusted Stock Price API",
+    "description": "Unadjusted Stock Price API returns historical price and volume data without adjusting for corporate actions like stock splits or dividends. Fields include adjusted open, high, low, close, and volume. Category: market-data. Use cases include preserving raw price history for backtesting that accounts for splits, validating corporate action adjustments, performing event-driven analysis with unmodified price levels, integrating unadjusted data into ETL pipelines for archival, and comparing adjusted vs. unadjusted series in research. Parameters: required: symbol (string); optional: from (date), to (date). Response example fields: symbol (string), date (string, YYYY-MM-DD), adjOpen (number), adjHigh (number), adjLow (number), adjClose (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "preserve raw price history for backtesting that accounts for splits",
+      "validate corporate action adjustments",
+      "perform event-driven analysis with unmodified price levels",
+      "integrate unadjusted data into ETL pipelines for archival",
+      "compare adjusted vs. unadjusted series in research"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "date": "2025-02-04",
+      "adjOpen": 227.2,
+      "adjHigh": 233.13,
+      "adjLow": 226.65,
+      "adjClose": 232.8,
+      "volume": 44489128
+    }
+  },
+  {
+    "name": "Unadjusted Stock Price API",
+    "description": "Unadjusted Stock Price API provides historical end-of-day price data without split or dividend adjustments, delivering true open, high, low, close, and volume values. Category: market-data. Use cases include reconstructing the exact price series for quantitative strategies, auditing data integrity for corporate actions, building comparative analyses between adjusted and unadjusted data, supplying raw data to compliance audits, and populating legacy systems that expect unmodified values. Parameters: required: symbol (string); optional: from (date), to (date). Response example fields: symbol (string), date (string, YYYY-MM-DD), adjOpen (number), adjHigh (number), adjLow (number), adjClose (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "reconstruct the exact price series for quantitative strategies",
+      "audit data integrity for corporate actions",
+      "build comparative analyses between adjusted and unadjusted data",
+      "supply raw data to compliance audits",
+      "populate legacy systems that expect unmodified values"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "date": "2025-02-04",
+      "adjOpen": 227.2,
+      "adjHigh": 233.13,
+      "adjLow": 226.65,
+      "adjClose": 232.8,
+      "volume": 44489128
+    }
+  },
+  {
+    "name": "Dividend Adjusted Price Chart API",
+    "description": "Dividend Adjusted Price Chart API returns end-of-day price and volume data adjusted for dividend payouts, ensuring the continuity of price series. Fields include adjusted open, high, low, close, and volume. Category: market-data. Use cases include tracking total returns over time, calculating accurate performance metrics for dividend-paying stocks, populating adjusted price charts for reporting, driving backtests that reflect dividend reinvestment, and integrating adjusted data into portfolio analytics. Parameters: required: symbol (string); optional: from (date), to (date). Response example fields: symbol (string), date (string, YYYY-MM-DD), adjOpen (number), adjHigh (number), adjLow (number), adjClose (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "track total returns over time for dividend-paying stocks",
+      "calculate accurate performance metrics accounting for dividends",
+      "populate adjusted price charts for reporting",
+      "drive backtests that reflect dividend reinvestment",
+      "integrate adjusted data into portfolio analytics"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "date": "2025-02-04",
+      "adjOpen": 227.2,
+      "adjHigh": 233.13,
+      "adjLow": 226.65,
+      "adjClose": 232.8,
+      "volume": 44489128
+    }
+  },
+  {
+    "name": "Dividend Adjusted Price Chart API",
+    "description": "Dividend Adjusted Price Chart API provides daily price and volume values that reflect dividend adjustments, delivering a seamless price series for dividend-paying equities. Category: market-data. Use cases include building total return indices, generating charts that account for dividend distributions, analyzing long-term performance with dividend reinvestment, supplying adjusted historical data for financial models, and supporting compliance with reporting standards on dividend impact. Parameters: required: symbol (string); optional: from (date), to (date). Response example fields: symbol (string), date (string, YYYY-MM-DD), adjOpen (number), adjHigh (number), adjLow (number), adjClose (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "build total return indices for dividend-paying equities",
+      "generate charts that account for dividend distributions",
+      "analyze long-term performance with dividend reinvestment",
+      "supply adjusted historical data for financial models",
+      "support compliance with reporting standards on dividend impact"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "date": "2025-02-04",
+      "adjOpen": 227.2,
+      "adjHigh": 233.13,
+      "adjLow": 226.65,
+      "adjClose": 232.8,
+      "volume": 44489128
+    }
+  },
+  {
+    "name": "1 Min Interval Stock Chart API",
+    "description": "1 Min Interval Stock Chart API provides precise intraday end-of-day data at one-minute granularity, including timestamp, open, high, low, close prices, and trading volume for each minute. Category: market-data. Use cases include building high-frequency intraday charts for active traders, powering algorithmic trading signals that require one-minute resolution, monitoring real-time price action for scalping strategies, performing minute-level backtesting of trading models, and feeding intraday analytics dashboards with fine-grained data. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "build high-frequency intraday charts for active traders",
+      "power algorithmic trading signals that require one-minute resolution",
+      "monitor real-time price action for scalping strategies",
+      "perform minute-level backtesting of trading models",
+      "feed intraday analytics dashboards with fine-grained data"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:59:00",
+      "open": 233.01,
+      "low": 232.72,
+      "high": 233.13,
+      "close": 232.79,
+      "volume": 720121
+    }
+  },
+  {
+    "name": "1 Min Interval Stock Chart API",
+    "description": "1 Min Interval Stock Chart API delivers one-minute interval price and volume data for a specified equity, capturing open, high, low, close, and volume for each minute. Category: market-data. Use cases include enabling real-time intraday monitoring tools, supporting microstructure analysis for quantitative researchers, generating lightning-fast charts for mobile trading apps, integrating minute-by-minute feeds into risk management systems, and validating price movements at fine resolution. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "enable real-time intraday monitoring tools",
+      "support microstructure analysis for quantitative researchers",
+      "generate lightning-fast charts for mobile trading apps",
+      "integrate minute-by-minute feeds into risk management systems",
+      "validate price movements at fine resolution"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:59:00",
+      "open": 233.01,
+      "low": 232.72,
+      "high": 233.13,
+      "close": 232.79,
+      "volume": 720121
+    }
+  },
+  {
+    "name": "5 Min Interval Stock Chart API",
+    "description": "5 Min Interval Stock Chart API returns intraday data at five-minute intervals, including timestamp, open, high, low, close prices, and trading volume for each period. Category: market-data. Use cases include constructing candlestick charts at five-minute resolution, supporting short-term trading strategies and swing-trading analysis, aggregating tick data into manageable bars, driving intraday dashboards for market-making desks, and validating mid-term intraday trends. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "construct candlestick charts at five-minute resolution",
+      "support short-term trading strategies and swing-trading analysis",
+      "aggregate tick data into manageable bars",
+      "drive intraday dashboards for market-making desks",
+      "validate mid-term intraday trends"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:55:00",
+      "open": 232.87,
+      "low": 232.72,
+      "high": 233.13,
+      "close": 232.79,
+      "volume": 1555040
+    }
+  },
+  {
+    "name": "5 Min Interval Stock Chart API",
+    "description": "5 Min Interval Stock Chart API provides five-minute resolution price and volume details for a given stock, capturing open, high, low, close, and volume every five minutes. Category: market-data. Use cases include powering intraday charting tools for momentum traders, feeding data into time-weighted averaging algorithms, generating heatmaps of price change over five-minute blocks, integrating into algorithmic strategies that operate on five-minute signals, and monitoring execution quality for short-duration trades. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "power intraday charting tools for momentum traders",
+      "feed data into time-weighted averaging algorithms",
+      "generate heatmaps of price change over five-minute blocks",
+      "integrate into algorithmic strategies that operate on five-minute signals",
+      "monitor execution quality for short-duration trades"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:55:00",
+      "open": 232.87,
+      "low": 232.72,
+      "high": 233.13,
+      "close": 232.79,
+      "volume": 1555040
+    }
+  },
+  {
+    "name": "15 Min Interval Stock Chart API",
+    "description": "15 Min Interval Stock Chart API returns intraday price and volume data at fifteen-minute intervals, including timestamp, open, high, low, close prices, and trading volume. Category: market-data. Use cases include creating fifteen-minute candlestick charts for technical analysis, supporting medium-term intraday trend identification, integrating into swing-trading dashboards, aggregating high-frequency data into fifteen-minute bars for modeling, and validating intraday support/resistance levels. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "create fifteen-minute candlestick charts for technical analysis",
+      "support medium-term intraday trend identification",
+      "integrate into swing-trading dashboards",
+      "aggregate high-frequency data into fifteen-minute bars for modeling",
+      "validate intraday support/resistance levels"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:45:00",
+      "open": 232.25,
+      "low": 232.18,
+      "high": 233.13,
+      "close": 232.79,
+      "volume": 2535629
+    }
+  },
+  {
+    "name": "15 Min Interval Stock Chart API",
+    "description": "15 Min Interval Stock Chart API provides fifteen-minute resolution data points for a specified ticker, including open, high, low, close, and volume for each interval. Category: market-data. Use cases include powering intraday analytics that require quarter-hour granularity, feeding fifteen-minute bars into machine learning models, generating mid-session trend reports, supporting portfolio risk analysis with intraday granularity, and integrating into automated alert systems for breakouts within fifteen-minute frames. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "power intraday analytics that require quarter-hour granularity",
+      "feed fifteen-minute bars into machine learning models",
+      "generate mid-session trend reports",
+      "support portfolio risk analysis with intraday granularity",
+      "integrate into automated alert systems for breakouts within fifteen-minute frames"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:45:00",
+      "open": 232.25,
+      "low": 232.18,
+      "high": 233.13,
+      "close": 232.79,
+      "volume": 2535629
+    }
+  },
+  {
+    "name": "30 Min Interval Stock Chart API",
+    "description": "30 Min Interval Stock Chart API delivers intraday data at thirty-minute intervals, including timestamp, open, high, low, close prices, and trading volume every half hour. Category: market-data. Use cases include building intraday charts that summarize half-hour performance, identifying medium-term trend reversals during trading sessions, feeding data into volatility modeling at thirty-minute resolution, powering operational dashboards for trading floors, and validating execution quality over larger intervals. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "build intraday charts that summarize half-hour performance",
+      "identify medium-term trend reversals during trading sessions",
+      "feed data into volatility modeling at thirty-minute resolution",
+      "power operational dashboards for trading floors",
+      "validate execution quality over larger intervals"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:30:00",
+      "open": 232.29,
+      "low": 232.01,
+      "high": 233.13,
+      "close": 232.79,
+      "volume": 3476320
+    }
+  },
+  {
+    "name": "30 Min Interval Stock Chart API",
+    "description": "30 Min Interval Stock Chart API provides half-hourly price and volume data points for any equity, capturing open, high, low, close, and volume for each thirty-minute slot. Category: market-data. Use cases include powering mid-session performance analysis, integrating thirty-minute bars into algorithmic frameworks, facilitating risk monitoring with coarser granularity, generating summary charts for end-of-day reporting, and feeding intraday data pipelines that require half-hour buckets. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "power mid-session performance analysis",
+      "integrate thirty-minute bars into algorithmic frameworks",
+      "facilitate risk monitoring with coarser granularity",
+      "generate summary charts for end-of-day reporting",
+      "feed intraday data pipelines that require half-hour buckets"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:30:00",
+      "open": 232.29,
+      "low": 232.01,
+      "high": 233.13,
+      "close": 232.79,
+      "volume": 3476320
+    }
+  },
+  {
+    "name": "1 Hour Interval Stock Chart API",
+    "description": "1 Hour Interval Stock Chart API returns intraday data at one-hour intervals, including timestamp, open, high, low, close prices, and trading volume for each hour. Category: market-data. Use cases include analyzing broader intraday trends, building hourly candlestick charts for swing and day traders, integrating hourly data into portfolio risk models, driving end-of-day summaries that include hourly breakdowns, and validating price action across trading sessions. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "analyze broader intraday trends",
+      "build hourly candlestick charts for swing and day traders",
+      "integrate hourly data into portfolio risk models",
+      "drive end-of-day summaries that include hourly breakdowns",
+      "validate price action across trading sessions"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:30:00",
+      "open": 232.29,
+      "low": 232.01,
+      "high": 233.13,
+      "close": 232.37,
+      "volume": 15079381
+    }
+  },
+  {
+    "name": "1 Hour Interval Stock Chart API",
+    "description": "1 Hour Interval Stock Chart API provides hourly resolution price and volume data for a specified symbol, capturing open, high, low, close, and volume each hour. Category: market-data. Use cases include feeding hourly bars into technical indicators, supporting multi-timeframe analysis alongside minute-level data, powering trading dashboards with coarser granularity, backtesting strategies that rely on hourly signals, and generating hourly performance reports. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "feed hourly bars into technical indicators",
+      "support multi-timeframe analysis alongside minute-level data",
+      "power trading dashboards with coarser granularity",
+      "backtest strategies that rely on hourly signals",
+      "generate hourly performance reports"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 15:30:00",
+      "open": 232.29,
+      "low": 232.01,
+      "high": 233.13,
+      "close": 232.37,
+      "volume": 15079381
+    }
+  },
+  {
+    "name": "4 Hour Interval Stock Chart API",
+    "description": "4 Hour Interval Stock Chart API returns intraday data at four-hour intervals, including timestamp, open, high, low, close prices, and trading volume for each four-hour block. Category: market-data. Use cases include tracking extended intraday trends, building four-hour candlestick charts for position traders, integrating into multi-day analysis frameworks, feeding data into swing trading models that operate on four-hour bars, and validating price movements across longer intraday periods. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "track extended intraday trends",
+      "build four-hour candlestick charts for position traders",
+      "integrate into multi-day analysis frameworks",
+      "feed data into swing trading models that operate on four-hour bars",
+      "validate price movements across longer intraday periods"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 12:30:00",
+      "open": 231.79,
+      "low": 231.37,
+      "high": 233.13,
+      "close": 232.37,
+      "volume": 23781913
+    }
+  },
+  {
+    "name": "4 Hour Interval Stock Chart API",
+    "description": "4 Hour Interval Stock Chart API provides four-hour resolution data points for any equity, capturing open, high, low, close, and volume every four hours. Category: market-data. Use cases include analyzing broader market movements within a single trading day, integrating four-hour bars into algorithmic strategies, supplying data for swing-trading dashboards, supporting risk models with intraday breakdowns, and generating summarised charts for multi-day analytics. Parameters: required: symbol (string); optional: from (date), to (date), nonadjusted (boolean). Response example fields: date (string, YYYY-MM-DD HH:mm:ss), open (number), low (number), high (number), close (number), volume (number).",
+    "category": "market-data",
+    "use_cases": [
+      "analyze broader market movements within a single trading day",
+      "integrate four-hour bars into algorithmic strategies",
+      "supply data for swing-trading dashboards",
+      "support risk models with intraday breakdowns",
+      "generate summarised charts for multi-day analytics"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": [
+        "from",
+        "to",
+        "nonadjusted"
+      ]
+    },
+    "response_example": {
+      "date": "2025-02-04 12:30:00",
+      "open": 231.79,
+      "low": 231.37,
+      "high": 233.13,
+      "close": 232.37,
+      "volume": 23781913
+    }
+  },
+  {
+    "name": "Latest Earning Transcripts API",
+    "description": "Latest Earning Transcripts API returns a paginated list of companies that have available earnings call transcripts, including symbol, fiscal period, fiscal year, and transcript date. Category: reference. Use cases include populating a dashboard of the most recent earnings calls, driving research tools that list companies with newly published transcripts, automating notifications when new transcripts are available, feeding ETL pipelines for transcript ingestion, and enabling compliance teams to track the latest corporate communications. Parameters: required: limit (number), page (number). Response example fields: symbol (string), period (string), fiscalYear (number), date (string, YYYY-MM-DD).",
+    "category": "reference",
+    "use_cases": [
+      "populate a dashboard of the most recent earnings calls",
+      "drive research tools that list companies with newly published transcripts",
+      "automate notifications when new transcripts are available",
+      "feed ETL pipelines for transcript ingestion",
+      "enable compliance teams to track the latest corporate communications"
+    ],
+    "parameters": {
+      "required": [
+        "limit",
+        "page"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "CSWC",
+      "period": "Q3",
+      "fiscalYear": 2025,
+      "date": "2025-02-04"
+    }
+  },
+  {
+    "name": "Latest Earning Transcripts API",
+    "description": "Latest Earning Transcripts API provides a list of symbols along with their latest earnings transcript metadata—fiscal period, year, and date—enabling users to identify which companies have recent earnings calls. Category: reference. Use cases include generating weekly reports of companies with new transcripts, integrating into alert systems for financial analysts, driving UI components that highlight fresh earnings releases, syncing transcript lists for NLP pipelines, and maintaining up-to-date records in data warehouses. Parameters: required: limit (number), page (number). Response example fields: symbol (string), period (string), fiscalYear (number), date (string, YYYY-MM-DD).",
+    "category": "reference",
+    "use_cases": [
+      "generate weekly reports of companies with new transcripts",
+      "integrate into alert systems for financial analysts",
+      "drive UI components that highlight fresh earnings releases",
+      "sync transcript lists for NLP pipelines",
+      "maintain up-to-date records in data warehouses"
+    ],
+    "parameters": {
+      "required": [
+        "limit",
+        "page"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "CSWC",
+      "period": "Q3",
+      "fiscalYear": 2025,
+      "date": "2025-02-04"
+    }
+  },
+  {
+    "name": "Earnings Transcript API",
+    "description": "Earnings Transcript API returns the full text of a company’s specified earnings call transcript, including symbol, quarter, year, date, and the transcript content. Category: reference. Use cases include conducting sentiment analysis on management commentary, archiving detailed earnings discussions for research, integrating transcripts into text-mining pipelines, powering knowledge bases that index corporate communications, and enabling compliance audits of public disclosures. Parameters: required: symbol (string), year (string), quarter (string); optional: limit (number). Response example fields: symbol (string), period (string), year (number), date (string, YYYY-MM-DD), content (string).",
+    "category": "reference",
+    "use_cases": [
+      "conduct sentiment analysis on management commentary",
+      "archive detailed earnings discussions for research",
+      "integrate transcripts into text-mining pipelines",
+      "power knowledge bases that index corporate communications",
+      "enable compliance audits of public disclosures"
+    ],
+    "parameters": {
+      "required": [
+        "symbol",
+        "year",
+        "quarter"
+      ],
+      "optional": [
+        "limit"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "period": "Q3",
+      "year": 2020,
+      "date": "2020-07-30",
+      "content": "Operator: Good day, everyone. Welcome to the Apple Incorporated Third Quarter Fiscal Year 2020 Earnings Conference Call. Today's call is being recorded. At this time, for opening remarks and introductions, I would like to turn things over to Mr. Tejas Gala, Senior Manager, Corporate Finance and Investor Relations. Please go ahead, sir.\nTejas Gala: Thank you. Good afternoon and thank you for joining us. Speaking first today is Apple's CEO, Tim Cook; and he'll be followed by CFO, Luca Maestri. Aft..."
+    }
+  },
+  {
+    "name": "Earnings Transcript API",
+    "description": "Earnings Transcript API provides complete earnings call transcript data for a given symbol, year, and quarter, delivering the full dialogue between company executives and participants. Category: reference. Use cases include powering financial research tools that require entire transcript content, feeding natural language processing engines to extract key insights, building searchable archives of earnings calls, enabling competitive analysis by comparing management commentary, and supporting investor presentations with verbatim earnings responses. Parameters: required: symbol (string), year (string), quarter (string); optional: limit (number). Response example fields: symbol (string), period (string), year (number), date (string, YYYY-MM-DD), content (string).",
+    "category": "reference",
+    "use_cases": [
+      "power financial research tools that require entire transcript content",
+      "feed natural language processing engines to extract key insights",
+      "build searchable archives of earnings calls",
+      "enable competitive analysis by comparing management commentary",
+      "support investor presentations with verbatim earnings responses"
+    ],
+    "parameters": {
+      "required": [
+        "symbol",
+        "year",
+        "quarter"
+      ],
+      "optional": [
+        "limit"
+      ]
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "period": "Q3",
+      "year": 2020,
+      "date": "2020-07-30",
+      "content": "Operator: Good day, everyone. Welcome to the Apple Incorporated Third Quarter Fiscal Year 2020 Earnings Conference Call. Today's call is being recorded. At this time, for opening remarks and introductions, I would like to turn things over to Mr. Tejas Gala, Senior Manager, Corporate Finance and Investor Relations. Please go ahead, sir.\nTejas Gala: Thank you. Good afternoon and thank you for joining us. Speaking first today is Apple's CEO, Tim Cook; and he'll be followed by CFO, Luca Maestri. Aft..."
+    }
+  },
+  {
+    "name": "Transcripts Dates By Symbol API",
+    "description": "Transcripts Dates By Symbol API returns all available earnings call transcript dates for a given company symbol, listing each quarter and fiscal year with its corresponding date. Category: reference. Use cases include driving UI components that let users select which transcript to view, enabling timeline visualizations of earnings calls, integrating with scheduling tools to plan analyst coverage, supporting ETL jobs that ingest transcript metadata, and validating data availability before full transcript retrieval. Parameters: required: symbol (string). Response example fields: quarter (number), fiscalYear (number), date (string, YYYY-MM-DD).",
+    "category": "reference",
+    "use_cases": [
+      "drive UI components that let users select which transcript to view",
+      "enable timeline visualizations of earnings calls",
+      "integrate with scheduling tools to plan analyst coverage",
+      "support ETL jobs that ingest transcript metadata",
+      "validate data availability before full transcript retrieval"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "quarter": 1,
+      "fiscalYear": 2025,
+      "date": "2025-01-30"
+    }
+  },
+  {
+    "name": "Transcripts Dates By Symbol API",
+    "description": "Transcripts Dates By Symbol API provides a chronological list of earnings call transcript dates associated with a specific symbol, including quarter and fiscal year. Category: reference. Use cases include automating notifications for upcoming transcript releases, populating dropdowns in transcript lookup tools, feeding timeline data into analytics dashboards, enabling audit trails for earnings call schedules, and integrating with compliance systems to verify transcript publication dates. Parameters: required: symbol (string). Response example fields: quarter (number), fiscalYear (number), date (string, YYYY-MM-DD).",
+    "category": "reference",
+    "use_cases": [
+      "automate notifications for upcoming transcript releases",
+      "populate dropdowns in transcript lookup tools",
+      "feed timeline data into analytics dashboards",
+      "enable audit trails for earnings call schedules",
+      "integrate with compliance systems to verify transcript publication dates"
+    ],
+    "parameters": {
+      "required": [
+        "symbol"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "quarter": 1,
+      "fiscalYear": 2025,
+      "date": "2025-01-30"
+    }
+  },
+  {
+    "name": "Available Transcript Symbols API",
+    "description": "Available Transcript Symbols API returns a list of all stock symbols that have at least one earnings call transcript available, along with the company name and number of transcripts. Category: reference. Use cases include generating a master index of companies with transcript archives, driving search filters for transcript libraries, integrating with ETL workflows to determine which symbols to ingest, powering analytics dashboards that track coverage breadth, and enabling research platforms to prioritize companies by transcript count. Parameters: none. Response example fields: symbol (string), companyName (string), noOfTranscripts (string).",
+    "category": "reference",
+    "use_cases": [
+      "generate a master index of companies with transcript archives",
+      "drive search filters for transcript libraries",
+      "integrate with ETL workflows to determine which symbols to ingest",
+      "power analytics dashboards that track coverage breadth",
+      "enable research platforms to prioritize companies by transcript count"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "MCUJF",
+      "companyName": "Medicure Inc.",
+      "noOfTranscripts": "16"
+    }
+  },
+  {
+    "name": "Available Transcript Symbols API",
+    "description": "Available Transcript Symbols API provides a directory of symbols and companies that have available earnings call transcripts, including the total transcript count per symbol. Category: reference. Use cases include creating lookup tables for transcript availability, feeding UI components with symbols that support transcript search, driving bulk ingestion of transcript data based on symbol lists, enabling compliance checks for transcript coverage, and powering dashboards that display companies ranked by transcript volume. Parameters: none. Response example fields: symbol (string), companyName (string), noOfTranscripts (string).",
+    "category": "reference",
+    "use_cases": [
+      "create lookup tables for transcript availability",
+      "feed UI components with symbols that support transcript search",
+      "drive bulk ingestion of transcript data based on symbol lists",
+      "enable compliance checks for transcript coverage",
+      "power dashboards that display companies ranked by transcript volume"
+    ],
+    "parameters": {
+      "required": [],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "MCUJF",
+      "companyName": "Medicure Inc.",
+      "noOfTranscripts": "16"
+    }
+  },
+  {
+    "name": "Industry Classification List API",
+    "description": "Industry Classification List API returns a comprehensive directory of Standard Industrial Classification (SIC) codes and corresponding industry titles, enabling users to retrieve all valid industry classifications. Category: reference. Use cases include populating industry filter dropdowns in screening tools, validating SIC codes in data-entry workflows, driving ETL pipelines that segment companies by industry, supporting compliance systems that verify industry classifications, and enriching research platforms with standardized industry metadata. Parameters: required: industryTitle (string), sicCode (string). Response example fields: office (string), sicCode (string), industryTitle (string).",
+    "category": "reference",
+    "use_cases": [
+      "populate industry filter dropdowns in screening tools",
+      "validate SIC codes in data-entry workflows",
+      "drive ETL pipelines that segment companies by industry",
+      "support compliance systems that verify industry classifications",
+      "enrich research platforms with standardized industry metadata"
+    ],
+    "parameters": {
+      "required": [
+        "industryTitle",
+        "sicCode"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "office": "Office of Life Sciences",
+      "sicCode": "100",
+      "industryTitle": "AGRICULTURAL PRODUCTION-CROPS"
+    }
+  },
+  {
+    "name": "Industry Classification List API",
+    "description": "Industry Classification List API provides a master list of SIC codes and their corresponding industry titles, including the regulatory office designation. Category: reference. Use cases include building industry lookup services for analytics platforms, synchronizing local industry metadata with the standardized SIC list, integrating industry codes into portfolio allocation models, validating industry assignments in compliance audits, and enabling dashboards that display industry-level summaries. Parameters: required: industryTitle (string), sicCode (string). Response example fields: office (string), sicCode (string), industryTitle (string).",
+    "category": "reference",
+    "use_cases": [
+      "build industry lookup services for analytics platforms",
+      "synchronize local industry metadata with standardized SIC list",
+      "integrate industry codes into portfolio allocation models",
+      "validate industry assignments in compliance audits",
+      "enable dashboards that display industry-level summaries"
+    ],
+    "parameters": {
+      "required": [
+        "industryTitle",
+        "sicCode"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "office": "Office of Life Sciences",
+      "sicCode": "100",
+      "industryTitle": "AGRICULTURAL PRODUCTION-CROPS"
+    }
+  },
+  {
+    "name": "Industry Classification Search API",
+    "description": "Industry Classification Search API returns detailed industry classification and company information by searching with one or more identifiers (symbol, CIK, or SIC code). Category: reference. Use cases include retrieving industry details for a given stock ticker, validating a company’s SIC classification, integrating industry metadata into CVM applications, populating compliance dashboards with SIC-based data, and enhancing data warehouses with company-specific industry attributes. Parameters: required: symbol (string), cik (string), sicCode (string). Response example fields: symbol (string), name (string), cik (string), sicCode (string), industryTitle (string), businessAddress (array of strings), phoneNumber (string).",
+    "category": "reference",
+    "use_cases": [
+      "retrieve industry details for a given stock ticker",
+      "validate a company’s SIC classification",
+      "integrate industry metadata into CVM applications",
+      "populate compliance dashboards with SIC-based data",
+      "enhance data warehouses with company-specific industry attributes"
+    ],
+    "parameters": {
+      "required": [
+        "symbol",
+        "cik",
+        "sicCode"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "name": "APPLE INC.",
+      "cik": "0000320193",
+      "sicCode": "3571",
+      "industryTitle": "ELECTRONIC COMPUTERS",
+      "businessAddress": [
+        "ONE APPLE PARK WAY",
+        "CUPERTINO CA 95014"
+      ],
+      "phoneNumber": "(408) 996-1010"
+    }
+  },
+  {
+    "name": "Industry Classification Search API",
+    "description": "Industry Classification Search API provides a targeted search for company industry data by accepting inputs like symbol, CIK, or SIC code and returning company name, SIC code, industry title, and contact information. Category: reference. Use cases include powering UI search components for industry lookup, driving ETL pipelines to enrich company records with SIC-based metadata, supporting automated compliance checks on industry codes, building dashboards showing company industry assignments, and integrating into analytics models that segment by industry. Parameters: required: symbol (string), cik (string), sicCode (string). Response example fields: symbol (string), name (string), cik (string), sicCode (string), industryTitle (string), businessAddress (array of strings), phoneNumber (string).",
+    "category": "reference",
+    "use_cases": [
+      "power UI search components for industry lookup",
+      "drive ETL pipelines to enrich company records with SIC-based metadata",
+      "support automated compliance checks on industry codes",
+      "build dashboards showing company industry assignments",
+      "integrate into analytics models that segment by industry"
+    ],
+    "parameters": {
+      "required": [
+        "symbol",
+        "cik",
+        "sicCode"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "AAPL",
+      "name": "APPLE INC.",
+      "cik": "0000320193",
+      "sicCode": "3571",
+      "industryTitle": "ELECTRONIC COMPUTERS",
+      "businessAddress": [
+        "ONE APPLE PARK WAY",
+        "CUPERTINO CA 95014"
+      ],
+      "phoneNumber": "(408) 996-1010"
+    }
+  },
+  {
+    "name": "All Industry Classification API",
+    "description": "All Industry Classification API returns a paginated list of all companies along with their SIC codes, industry titles, and basic business contact information. Category: reference. Use cases include creating a full industry classification database for analytics, driving ETL pipelines that ingest company-level SIC metadata, populating compliance systems with industry assignments, powering screening tools that filter by industry, and supporting research platforms that analyze industry-wide trends. Parameters: required: page (number), limit (number). Response example fields: symbol (string), name (string), cik (string), sicCode (string), industryTitle (string), businessAddress (array of strings), phoneNumber (string).",
+    "category": "reference",
+    "use_cases": [
+      "create a full industry classification database for analytics",
+      "drive ETL pipelines that ingest company-level SIC metadata",
+      "populate compliance systems with industry assignments",
+      "power screening tools that filter by industry",
+      "support research platforms analyzing industry-wide trends"
+    ],
+    "parameters": {
+      "required": [
+        "page",
+        "limit"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "0Q16.L",
+      "name": "BANK OF AMERICA CORP /DE/",
+      "cik": "0000070858",
+      "sicCode": "6021",
+      "industryTitle": "NATIONAL COMMERCIAL BANKS",
+      "businessAddress": [
+        "BANK OF AMERICA CORPORATE CENTER",
+        "CHARLOTTE NC 28255"
+      ],
+      "phoneNumber": "7043868486"
+    }
+  },
+  {
+    "name": "All Industry Classification API",
+    "description": "All Industry Classification API provides a comprehensive, paginated feed of companies with their SIC codes, industry titles, and business address details, allowing users to retrieve the entire universe of industry-classified entities. Category: reference. Use cases include building master company-industry tables in data warehouses, powering dashboards that display industry breakdowns, enabling compliance platforms to verify industry assignments for all listed companies, integrating into ETL processes that require full industry classification coverage, and supporting quantitative models that analyze industry distributions. Parameters: required: page (number), limit (number). Response example fields: symbol (string), name (string), cik (string), sicCode (string), industryTitle (string), businessAddress (array of strings), phoneNumber (string).",
+    "category": "reference",
+    "use_cases": [
+      "build master company-industry tables in data warehouses",
+      "power dashboards that display industry breakdowns",
+      "enable compliance platforms to verify industry assignments",
+      "integrate into ETL processes requiring full coverage",
+      "support quantitative models analyzing industry distributions"
+    ],
+    "parameters": {
+      "required": [
+        "page",
+        "limit"
+      ],
+      "optional": []
+    },
+    "response_example": {
+      "symbol": "0Q16.L",
+      "name": "BANK OF AMERICA CORP /DE/",
+      "cik": "0000070858",
+      "sicCode": "6021",
+      "industryTitle": "NATIONAL COMMERCIAL BANKS",
+      "businessAddress": [
+        "BANK OF AMERICA CORPORATE CENTER",
+        "CHARLOTTE NC 28255"
+      ],
+      "phoneNumber": "7043868486"
+    }
+  }
+]

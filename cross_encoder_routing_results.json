@@ -1,34 +1,34 @@
 {
   "summary": {
     "total_queries": 53,
-    "avg_time": 1.9576,
-    "avg_confidence": 51.4,
-    "tool_accuracy": 71.7,
-    "profile_accuracy": 84.9,
-    "full_accuracy": 71.7
+    "avg_time": 2.2850943736310274,
+    "avg_confidence": 73.47169811320755,
+    "tool_accuracy": 79.24528301886792,
+    "profile_accuracy": 88.67924528301887,
+    "full_accuracy": 79.24528301886792
   },
   "detailed_results": [
     {
       "query": "What's the latest news about Tesla earnings?",
       "expected_tool": "web_search_deep",
       "expected_profile": "web-search",
-      "routed_tool": "earnings_report_tool",
+      "routed_tool": "stock_grade_latest_news_tool",
       "routed_profile": "internal-search",
       "tool_correct": false,
       "profile_correct": false,
-      "confidence": 49.0,
-      "time_seconds": 2.9895
+      "confidence": 40.0,
+      "time_seconds": 4.832221031188965
     },
     {
       "query": "Search for recent analyst reports on Apple stock",
       "expected_tool": "web_search_deep",
       "expected_profile": "web-search",
-      "routed_tool": "financial_estimates_tool",
+      "routed_tool": "price_target_latest_news_tool",
       "routed_profile": "internal-search",
       "tool_correct": false,
       "profile_correct": false,
-      "confidence": 53.0,
-      "time_seconds": 2.0681
+      "confidence": 40.0,
+      "time_seconds": 2.1161773204803467
     },
     {
       "query": "Find current market sentiment about Bitcoin",
@@ -38,19 +38,19 @@
       "routed_profile": "workflows",
       "tool_correct": false,
       "profile_correct": false,
-      "confidence": 53.0,
-      "time_seconds": 1.5312
+      "confidence": 40.0,
+      "time_seconds": 2.212509870529175
     },
     {
       "query": "Get analyst price targets for Microsoft",
       "expected_tool": "price_target_consensus_tool",
       "expected_profile": "internal-search",
-      "routed_tool": "price_target_consensus_tool",
+      "routed_tool": "price_target_news_tool",
       "routed_profile": "internal-search",
-      "tool_correct": true,
+      "tool_correct": false,
       "profile_correct": true,
-      "confidence": 50.0,
-      "time_seconds": 1.8112
+      "confidence": 95.0,
+      "time_seconds": 2.533567428588867
     },
     {
       "query": "Show me the latest price target changes",
@@ -60,8 +60,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 55.0,
-      "time_seconds": 1.5331
+      "confidence": 95.0,
+      "time_seconds": 2.281332492828369
     },
     {
       "query": "What are the financial estimates for Amazon next quarter?",
@@ -71,19 +71,19 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 51.0,
-      "time_seconds": 1.6064
+      "confidence": 40.0,
+      "time_seconds": 1.9779014587402344
     },
     {
       "query": "Give me the current stock rating for Google",
       "expected_tool": "stock_grades_tool",
       "expected_profile": "internal-search",
-      "routed_tool": "stock_grade_latest_news_tool",
+      "routed_tool": "stock_grades_tool",
       "routed_profile": "internal-search",
-      "tool_correct": false,
+      "tool_correct": true,
       "profile_correct": true,
-      "confidence": 46.0,
-      "time_seconds": 1.8639
+      "confidence": 40.0,
+      "time_seconds": 2.2819175720214844
     },
     {
       "query": "Show me recent analyst upgrades and downgrades",
@@ -93,8 +93,8 @@
       "routed_profile": "workflows",
       "tool_correct": false,
       "profile_correct": false,
-      "confidence": 48.0,
-      "time_seconds": 1.7304
+      "confidence": 95.0,
+      "time_seconds": 2.0431673526763916
     },
     {
       "query": "When is the next dividend payment for Coca-Cola?",
@@ -104,8 +104,8 @@
       "routed_profile": "internal-search",
       "tool_correct": false,
       "profile_correct": true,
-      "confidence": 45.0,
-      "time_seconds": 1.5895
+      "confidence": 40.0,
+      "time_seconds": 2.200206995010376
     },
     {
       "query": "Show me upcoming earnings announcements this week",
@@ -115,8 +115,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 53.0,
-      "time_seconds": 1.9266
+      "confidence": 40.0,
+      "time_seconds": 1.9084196090698242
     },
     {
       "query": "What IPOs are coming up next month?",
@@ -126,19 +126,19 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 55.0,
-      "time_seconds": 1.5448
+      "confidence": 40.0,
+      "time_seconds": 2.246792793273926
     },
     {
       "query": "Give me a comprehensive analysis of Tesla's financial performance",
       "expected_tool": "comprehensive_company_analysis_tool",
       "expected_profile": "workflows",
-      "routed_tool": "financial_estimates_tool",
-      "routed_profile": "internal-search",
-      "tool_correct": false,
-      "profile_correct": false,
-      "confidence": 47.0,
-      "time_seconds": 1.4595
+      "routed_tool": "comprehensive_company_analysis_tool",
+      "routed_profile": "workflows",
+      "tool_correct": true,
+      "profile_correct": true,
+      "confidence": 46.0,
+      "time_seconds": 2.8785693645477295
     },
     {
       "query": "Analyze the current market movers and what's driving them",
@@ -148,19 +148,19 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 58.0,
-      "time_seconds": 1.217
+      "confidence": 95.0,
+      "time_seconds": 2.839991569519043
     },
     {
       "query": "Perform technical analysis on Apple stock",
       "expected_tool": "technical_analysis_tool",
       "expected_profile": "workflows",
-      "routed_tool": "financial_estimates_tool",
-      "routed_profile": "internal-search",
-      "tool_correct": false,
-      "profile_correct": false,
-      "confidence": 55.0,
-      "time_seconds": 1.2852
+      "routed_tool": "technical_analysis_tool",
+      "routed_profile": "workflows",
+      "tool_correct": true,
+      "profile_correct": true,
+      "confidence": 95.0,
+      "time_seconds": 2.1985912322998047
     },
     {
       "query": "What's the analyst sentiment on Netflix?",
@@ -170,8 +170,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 56.0,
-      "time_seconds": 1.3722
+      "confidence": 95.0,
+      "time_seconds": 2.019523859024048
     },
     {
       "query": "Conduct a DCF valuation analysis for Microsoft",
@@ -181,8 +181,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 57.0,
-      "time_seconds": 1.8175
+      "confidence": 95.0,
+      "time_seconds": 2.1734766960144043
     },
     {
       "query": "Analyze Amazon's ESG sustainability performance",
@@ -192,8 +192,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 62.0,
-      "time_seconds": 1.6462
+      "confidence": 95.0,
+      "time_seconds": 2.495666265487671
     },
     {
       "query": "How are different sectors performing in the current economic environment?",
@@ -203,8 +203,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 54.0,
-      "time_seconds": 1.4675
+      "confidence": 95.0,
+      "time_seconds": 1.8494601249694824
     },
     {
       "query": "What are the top holdings in QQQ ETF?",
@@ -214,8 +214,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 48.0,
-      "time_seconds": 1.8179
+      "confidence": 40.0,
+      "time_seconds": 1.9299030303955078
     },
     {
       "query": "Analyze recent insider trading activity for Tesla",
@@ -225,8 +225,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 55.0,
-      "time_seconds": 1.409
+      "confidence": 95.0,
+      "time_seconds": 3.071078300476074
     },
     {
       "query": "Find high dividend yield stocks for income investing",
@@ -236,8 +236,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 53.0,
-      "time_seconds": 1.1667
+      "confidence": 95.0,
+      "time_seconds": 2.365020990371704
     },
     {
       "query": "What M&A activity is happening in the tech sector?",
@@ -247,8 +247,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 53.0,
-      "time_seconds": 1.4485
+      "confidence": 95.0,
+      "time_seconds": 2.0971486568450928
     },
     {
       "query": "How is the IPO market performing lately?",
@@ -258,8 +258,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 54.0,
-      "time_seconds": 1.3629
+      "confidence": 95.0,
+      "time_seconds": 2.1929891109466553
     },
     {
       "query": "Analyze USD/EUR forex trading opportunities",
@@ -269,8 +269,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 49.0,
-      "time_seconds": 1.4453
+      "confidence": 95.0,
+      "time_seconds": 2.8662257194519043
     },
     {
       "query": "What's the sentiment in the cryptocurrency market?",
@@ -280,30 +280,30 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 56.0,
-      "time_seconds": 1.9018
+      "confidence": 95.0,
+      "time_seconds": 2.1064646244049072
     },
     {
       "query": "Give me intraday trading signals for SPY",
       "expected_tool": "market_data_technical_analysis_tool",
       "expected_profile": "workflows",
-      "routed_tool": "price_target_latest_news_tool",
-      "routed_profile": "internal-search",
-      "tool_correct": false,
-      "profile_correct": false,
-      "confidence": 44.0,
-      "time_seconds": 1.6441
+      "routed_tool": "market_data_technical_analysis_tool",
+      "routed_profile": "workflows",
+      "tool_correct": true,
+      "profile_correct": true,
+      "confidence": 95.0,
+      "time_seconds": 2.105634927749634
     },
     {
       "query": "Analyze the latest earnings call transcript for Apple",
       "expected_tool": "earnings_and_transcript_analysis_tool",
       "expected_profile": "workflows",
-      "routed_tool": "financial_estimates_tool",
-      "routed_profile": "internal-search",
-      "tool_correct": false,
-      "profile_correct": false,
-      "confidence": 50.0,
-      "time_seconds": 1.827
+      "routed_tool": "earnings_and_transcript_analysis_tool",
+      "routed_profile": "workflows",
+      "tool_correct": true,
+      "profile_correct": true,
+      "confidence": 95.0,
+      "time_seconds": 2.6611716747283936
     },
     {
       "query": "What financial news is impacting the market today?",
@@ -313,8 +313,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 49.0,
-      "time_seconds": 1.3803
+      "confidence": 95.0,
+      "time_seconds": 2.0919723510742188
     },
     {
       "query": "Extract qualitative insights from Tesla's latest 10-K filing",
@@ -324,19 +324,19 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 47.0,
-      "time_seconds": 1.6264
+      "confidence": 95.0,
+      "time_seconds": 2.2521090507507324
     },
     {
       "query": "Get the revenue and margin data for Apple",
       "expected_tool": "quantitative_analysis_tool",
       "expected_profile": "internal-search",
-      "routed_tool": "financial_estimates_tool",
+      "routed_tool": "quantitative_analysis_tool",
       "routed_profile": "internal-search",
-      "tool_correct": false,
+      "tool_correct": true,
       "profile_correct": true,
-      "confidence": 49.0,
-      "time_seconds": 1.488
+      "confidence": 40.0,
+      "time_seconds": 2.203547954559326
     },
     {
       "query": "What's the financial health rating for Boeing?",
@@ -346,8 +346,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 45.0,
-      "time_seconds": 1.7001
+      "confidence": 40.0,
+      "time_seconds": 2.4367830753326416
     },
     {
       "query": "Show me the rating history for General Electric",
@@ -357,8 +357,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 51.0,
-      "time_seconds": 1.8378
+      "confidence": 40.0,
+      "time_seconds": 2.2571842670440674
     },
     {
       "query": "What are the price targets for AMD by timeframe?",
@@ -368,8 +368,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 48.0,
-      "time_seconds": 1.6273
+      "confidence": 40.0,
+      "time_seconds": 2.3762450218200684
     },
     {
       "query": "Show me recent price target news for NVIDIA",
@@ -379,30 +379,30 @@
       "routed_profile": "internal-search",
       "tool_correct": false,
       "profile_correct": true,
-      "confidence": 52.0,
-      "time_seconds": 1.4064
+      "confidence": 95.0,
+      "time_seconds": 2.035400152206421
     },
     {
       "query": "What's the consensus rating for Ford?",
       "expected_tool": "stock_grades_summary_tool",
       "expected_profile": "internal-search",
-      "routed_tool": "price_target_consensus_tool",
+      "routed_tool": "stock_grades_summary_tool",
       "routed_profile": "internal-search",
-      "tool_correct": false,
+      "tool_correct": true,
       "profile_correct": true,
-      "confidence": 43.0,
-      "time_seconds": 1.627
+      "confidence": 40.0,
+      "time_seconds": 1.9751951694488525
     },
     {
       "query": "Show me recent rating changes for Tesla",
       "expected_tool": "stock_grade_news_tool",
       "expected_profile": "internal-search",
-      "routed_tool": "historical_ratings_tool",
+      "routed_tool": "stock_grade_latest_news_tool",
       "routed_profile": "internal-search",
       "tool_correct": false,
       "profile_correct": true,
-      "confidence": 48.0,
-      "time_seconds": 1.4968
+      "confidence": 40.0,
+      "time_seconds": 1.8168766498565674
     },
     {
       "query": "What's the historical rating trend for Meta?",
@@ -412,8 +412,8 @@
       "routed_profile": "internal-search",
       "tool_correct": false,
       "profile_correct": true,
-      "confidence": 56.0,
-      "time_seconds": 1.5968
+      "confidence": 95.0,
+      "time_seconds": 1.991126537322998
     },
     {
       "query": "When are all the dividend payments this month?",
@@ -423,8 +423,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 50.0,
-      "time_seconds": 1.7064
+      "confidence": 40.0,
+      "time_seconds": 2.011639356613159
     },
     {
       "query": "Show me Netflix earnings report details",
@@ -434,8 +434,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 51.0,
-      "time_seconds": 1.952
+      "confidence": 40.0,
+      "time_seconds": 2.151007890701294
     },
     {
       "query": "What IPO disclosure filings were submitted recently?",
@@ -445,19 +445,19 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 57.0,
-      "time_seconds": 1.78
+      "confidence": 95.0,
+      "time_seconds": 2.1812305450439453
     },
     {
       "query": "Get the prospectus details for the upcoming Stripe IPO",
       "expected_tool": "ipos_prospectus_tool",
       "expected_profile": "internal-search",
-      "routed_tool": "ipos_prospectus_tool",
-      "routed_profile": "internal-search",
-      "tool_correct": true,
-      "profile_correct": true,
-      "confidence": 57.0,
-      "time_seconds": 1.3176
+      "routed_tool": "ipo_market_trends_analysis_tool",
+      "routed_profile": "workflows",
+      "tool_correct": false,
+      "profile_correct": false,
+      "confidence": 95.0,
+      "time_seconds": 1.9095017910003662
     },
     {
       "query": "What's the stock split history for Amazon?",
@@ -467,8 +467,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 51.0,
-      "time_seconds": 18.8909
+      "confidence": 95.0,
+      "time_seconds": 1.9314830303192139
     },
     {
       "query": "Are there any upcoming stock splits this quarter?",
@@ -478,8 +478,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 53.0,
-      "time_seconds": 2.2011
+      "confidence": 95.0,
+      "time_seconds": 2.037557363510132
     },
     {
       "query": "Summarize the latest ESG initiatives by Microsoft.",
@@ -489,8 +489,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 51.0,
-      "time_seconds": 1.5417
+      "confidence": 95.0,
+      "time_seconds": 1.944551706314087
     },
     {
       "query": "What are the most recent insider trades for Amazon?",
@@ -500,8 +500,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 50.0,
-      "time_seconds": 1.4645
+      "confidence": 40.0,
+      "time_seconds": 1.9160339832305908
     },
     {
       "query": "Give me a DCF valuation for Alphabet (GOOGL).",
@@ -511,8 +511,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 55.0,
-      "time_seconds": 2.2704
+      "confidence": 95.0,
+      "time_seconds": 1.9352693557739258
     },
     {
       "query": "Show me the upcoming stock splits in the S&P 500.",
@@ -522,8 +522,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 55.0,
-      "time_seconds": 1.6657
+      "confidence": 95.0,
+      "time_seconds": 2.023050546646118
     },
     {
       "query": "Analyze the sector rotation trends in the current market.",
@@ -533,8 +533,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 49.0,
-      "time_seconds": 1.2254
+      "confidence": 95.0,
+      "time_seconds": 3.527980089187622
     },
     {
       "query": "What are the top holdings and sector weights in the VOO ETF?",
@@ -544,8 +544,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 50.0,
-      "time_seconds": 1.2207
+      "confidence": 95.0,
+      "time_seconds": 2.0468246936798096
     },
     {
       "query": "Find the latest analyst price target changes for Nvidia.",
@@ -555,8 +555,8 @@
       "routed_profile": "internal-search",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 49.0,
-      "time_seconds": 1.6157
+      "confidence": 48.0,
+      "time_seconds": 2.202773094177246
     },
     {
       "query": "Get a summary of recent M&A activity in the healthcare sector.",
@@ -566,19 +566,19 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 52.0,
-      "time_seconds": 1.6697
+      "confidence": 95.0,
+      "time_seconds": 2.832491159439087
     },
     {
       "query": "What are the upcoming IPOs in the technology sector?",
       "expected_tool": "ipos_calendar_tool",
       "expected_profile": "internal-search",
-      "routed_tool": "ipos_calendar_tool",
-      "routed_profile": "internal-search",
-      "tool_correct": true,
-      "profile_correct": true,
-      "confidence": 50.0,
-      "time_seconds": 1.5602
+      "routed_tool": "ipo_market_trends_analysis_tool",
+      "routed_profile": "workflows",
+      "tool_correct": false,
+      "profile_correct": false,
+      "confidence": 95.0,
+      "time_seconds": 2.267221689224243
     },
     {
       "query": "Provide a technical analysis for Bitcoin.",
@@ -588,8 +588,8 @@
       "routed_profile": "workflows",
       "tool_correct": true,
       "profile_correct": true,
-      "confidence": 47.0,
-      "time_seconds": 1.4008
+      "confidence": 40.0,
+      "time_seconds": 2.26981520652771
     }
   ]
 }

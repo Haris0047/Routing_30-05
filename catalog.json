@@ -8,12 +8,12 @@
     {
       "id": "internal-search",
       "name": "Internal Search Profile",
-      "description": "Deep‑dive into proprietary filings using qualitative & quantitative tools."
+      "description": "Deep-dive into proprietary filings using qualitative & quantitative tools."
     },
     {
       "id": "workflows",
       "name": "Workflows Profile",
-      "description": "Chains specialised tools for multi‑step market research workflows."
+      "description": "Chains specialised tools for multi-step market research workflows."
     }
   ],
   "tools": [
@@ -21,254 +21,452 @@
       "id": "qualitative_analysis_tool",
       "profile_id": "internal-search",
       "name": "Qualitative Analysis Tool",
-      "description": "Extracts narrative insights (strategy, risks) from filings."
+      "description": "Extracts narrative insights (strategy, risks) from filings.",
+      "examples": [
+        "What strategic risks does Tesla mention in its latest 10-K?",
+        "Summarize the management’s discussion and analysis section for Apple’s Q1 filings",
+        "Identify key risk factors highlighted in Google’s most recent annual report"
+      ]
     },
     {
       "id": "quantitative_analysis_tool",
       "profile_id": "internal-search",
       "name": "Quantitative Analysis Tool",
-      "description": "Retrieves numeric KPIs such as revenue, margins, ratios."
+      "description": "Retrieves numeric KPIs such as revenue, margins, ratios.",
+      "examples": [
+        "Fetch revenue, EBITDA, and net income figures for Microsoft’s last quarter",
+        "Calculate Tesla’s gross margin and operating margin from its latest 10-Q",
+        "Provide Google’s current debt-to-equity and return on equity ratios"
+      ]
     },
     {
       "id": "web_search_deep",
       "profile_id": "web-search",
       "name": "Web Search Deep Tool",
-      "description": "Performs internet‑wide search with freshness bias and summarisation."
+      "description": "Performs internet-wide search with freshness bias and summarisation.",
+      "examples": [
+        "Retrieve the latest news articles on NVIDIA’s stock performance",
+        "Summarise recent analyst reports on Amazon from the past 48 hours",
+        "What are the current market sentiments about Meta Platforms this week?"
+      ]
     },
     {
       "id": "comprehensive_company_analysis_tool",
       "profile_id": "workflows",
       "name": "Comprehensive Company Analysis Tool",
-      "description": "Conducts an in-depth financial analysis of a company using data from Financial Modeling Prep API. Evaluates business fundamentals, competitive positioning, stock performance metrics, price target consensus among analysts, key financial ratios (P/E, ROE, debt-to-equity), profitability trends, and overall market sentiment. Generates a structured report with sections covering company overview, market position assessment, financial health indicators, analyst sentiment analysis, and forward-looking investment outlook with risk factors."
+      "description": "Conducts an in-depth financial analysis of a company using data from Financial Modeling Prep API. Evaluates business fundamentals, competitive positioning, stock performance metrics, price target consensus among analysts, key financial ratios (P/E, ROE, debt-to-equity), profitability trends, and overall market sentiment. Generates a structured report with sections covering company overview, market position assessment, financial health indicators, analyst sentiment analysis, and forward-looking investment outlook with risk factors.",
+      "examples": [
+        "Generate a full financial analysis report for Apple including P/E, ROE, and analyst sentiment",
+        "Provide a structured overview of Tesla’s competitive positioning, financial ratios, and market outlook",
+        "Create a comprehensive company analysis for Google, covering fundamentals, sentiment, and risk factors"
+      ]
     },
     {
       "id": "market_news_analysis_tool",
       "profile_id": "workflows",
       "name": "Market News Tool",
-      "description": "Aggregates and analyzes financial news across six key categories: general market, press releases, stock-specific, cryptocurrency, forex, and proprietary financial insights. Processes news from the past week with recency bias, identifies emerging patterns and significant market narratives, and evaluates potential market impacts. Delivers a comprehensive report structured with market overview, breaking news developments, sector-specific insights, asset class performance comparisons, recurring thematic elements, and forward-looking implications for market participants."
+      "description": "Aggregates and analyzes financial news across six key categories: general market, press releases, stock-specific, cryptocurrency, forex, and proprietary financial insights. Processes news from the past week with recency bias, identifies emerging patterns and significant market narratives, and evaluates potential market impacts. Delivers a comprehensive report structured with market overview, breaking news developments, sector-specific insights, asset class performance comparisons, recurring thematic elements, and forward-looking implications for market participants.",
+      "examples": [
+        "Analyze financial news for the past week focusing on semiconductor stocks",
+        "Provide a sector-specific summary of recent energy market developments",
+        "Identify emerging cryptocurrency narratives from the last seven days and their market impact"
+      ]
     },
     {
       "id": "market_movers_analysis_tool",
       "profile_id": "workflows",
       "name": "Market Movers Analysis Tool",
-      "description": "Identifies and analyzes stocks showing significant price movements and trading activity, focusing on biggest gainers, biggest losers, and most actively traded securities. Retrieves detailed financial data for each stock, correlates movement with relevant news and press releases, examines trading volume patterns, and determines potential catalysts behind the price action. Produces a comprehensive report detailing market conditions, analysis of top movers with catalysts, volume analysis, news impact assessment, overall market sentiment, and potential trading opportunities with associated risk factors."
+      "description": "Identifies and analyzes stocks showing significant price movements and trading activity, focusing on biggest gainers, biggest losers, and most actively traded securities. Retrieves detailed financial data for each stock, correlates movement with relevant news and press releases, examines trading volume patterns, and determines potential catalysts behind the price action. Produces a comprehensive report detailing market conditions, analysis of top movers with catalysts, volume analysis, news impact assessment, overall market sentiment, and potential trading opportunities with associated risk factors.",
+      "examples": [
+        "Show the top 5 gainers and losers in the S&P 500 with volume analysis and news catalysts",
+        "Analyze why GameStop’s volume spiked today and identify associated press releases",
+        "Provide a report on the most actively traded biotech stocks and their driving factors"
+      ]
     },
     {
       "id": "analyst_sentiment_analysis",
       "profile_id": "workflows",
       "name": "Analyst Sentiment Tool",
-      "description": "Evaluates consensus and divergence in professional analyst opinions for a specific company by analyzing price targets, ratings (buy/hold/sell), recent upgrades or downgrades, and sentiment shifts over time. Examines underlying rationales from analyst reports, correlates sentiment changes with news events, and identifies patterns in institutional perspectives. Produces a detailed report with price target range analysis, rating distribution metrics, historical sentiment tracking, news correlation assessment, sentiment trend analysis, and resulting investment implications with confidence indicators."
+      "description": "Evaluates consensus and divergence in professional analyst opinions for a specific company by analyzing price targets, ratings (buy/hold/sell), recent upgrades or downgrades, and sentiment shifts over time. Examines underlying rationales from analyst reports, correlates sentiment changes with news events, and identifies patterns in institutional perspectives. Produces a detailed report with price target range analysis, rating distribution metrics, historical sentiment tracking, news correlation assessment, sentiment trend analysis, and resulting investment implications with confidence indicators.",
+      "examples": [
+        "Summarize recent analyst upgrades and downgrades for Microsoft and correlate with market events",
+        "Track Tesla’s sentiment shift over the last quarter and identify key drivers",
+        "Provide a detailed analyst price target range and sentiment trend analysis for Amazon"
+      ]
     },
     {
       "id": "technical_analysis_tool",
       "profile_id": "workflows",
       "name": "Technical Analysis Tool",
-      "description": "Performs comprehensive technical analysis on securities using data from Financial Modeling Prep API. Applies multiple technical indicators including moving averages (SMA, EMA, WMA, DEMA, TEMA), oscillators (RSI, Williams %R), trend strength indicators (ADX), volatility measures (standard deviation), and proprietary combinations. Analyzes 15 days of price data to identify support/resistance levels, trend directions, potential reversal patterns, and generates trading signals with confidence levels based on indicator convergence/divergence patterns."
+      "description": "Performs comprehensive technical analysis on securities using data from Financial Modeling Prep API. Applies multiple technical indicators including moving averages (SMA, EMA, WMA, DEMA, TEMA), oscillators (RSI, Williams %R), trend strength indicators (ADX), volatility measures (standard deviation), and proprietary combinations. Analyzes 15 days of price data to identify support/resistance levels, trend directions, potential reversal patterns, and generates trading signals with confidence levels based on indicator convergence/divergence patterns.",
+      "examples": [
+        "Run RSI, SMA, and ADX on AMD’s last 15 days of price data to identify a potential reversal",
+        "Generate trading signals for Bitcoin using 15-day moving averages and volatility metrics",
+        "Identify support and resistance levels for Tesla stock over the past 15 trading sessions"
+      ]
     },
     {
       "id": "earnings_and_transcript_analysis_tool",
       "profile_id": "workflows",
       "name": "Earnings and Transcript Analysis Tool",
-      "description": "Examines quarterly earnings reports and earnings call transcripts to extract financial performance metrics, management commentary, and forward guidance. Analyzes revenue growth, earnings per share (EPS), profit margins, segment performance, and year-over-year comparisons. Processes earnings call transcripts to identify key themes, management tone, analyst questions, strategic initiatives, challenges acknowledged, and future outlook statements. Generates a detailed report integrating quantitative performance metrics with qualitative insights from management discussion for a holistic assessment of company trajectory."
+      "description": "Examines quarterly earnings reports and earnings call transcripts to extract financial performance metrics, management commentary, and forward guidance. Analyzes revenue growth, earnings per share (EPS), profit margins, segment performance, and year-over-year comparisons. Processes earnings call transcripts to identify key themes, management tone, analyst questions, strategic initiatives, challenges acknowledged, and future outlook statements. Generates a detailed report integrating quantitative performance metrics with qualitative insights from management discussion for a holistic assessment of company trajectory.",
+      "examples": [
+        "Extract key management commentary and forward guidance from Apple’s Q2 earnings call transcript",
+        "Summarize Tesla’s revenue growth and segment performance from its latest earnings report",
+        "Provide a combined report of financial metrics and qualitative insights from Google’s earnings call"
+      ]
     },
     {
       "id": "valuation_dcf_analysis_tool",
       "profile_id": "workflows",
       "name": "DCF Valuation Tool",
-      "description": "Performs sophisticated Discounted Cash Flow analysis using multiple financial statements (income statement, balance sheet, cash flow) and market data from Financial Modeling Prep API. Processes historical financial data to project future cash flows, determines appropriate discount rates based on WACC (Weighted Average Cost of Capital), terminal growth rates, and risk adjustments. Calculates both standard and levered DCF models for comparison, incorporates analyst price targets as reference points, and produces a comprehensive valuation report with sensitivity analysis across different growth and discount rate scenarios to determine fair value range."
+      "description": "Performs sophisticated Discounted Cash Flow analysis using multiple financial statements (income statement, balance sheet, cash flow) and market data from Financial Modeling Prep API. Processes historical financial data to project future cash flows, determines appropriate discount rates based on WACC (Weighted Average Cost of Capital), terminal growth rates, and risk adjustments. Calculates both standard and levered DCF models for comparison, incorporates analyst price targets as reference points, and produces a comprehensive valuation report with sensitivity analysis across different growth and discount rate scenarios to determine fair value range.",
+      "examples": [
+        "Perform a DCF valuation for Amazon with a 5% terminal growth rate and WACC of 8%",
+        "Generate sensitivity analysis for Netflix’s DCF model using discount rates between 7%–9%",
+        "Calculate Google’s fair value range using historical cash flows and a 4% terminal growth assumption"
+      ]
     },
     {
       "id": "esg_sustainability_analysis_tool",
       "profile_id": "workflows",
       "name": "ESG Sustainability Analysis Tool",
-      "description": "Comprehensively assesses a company's Environmental, Social, and Governance (ESG) performance using specialized ESG ratings data, disclosure metrics, and industry benchmarks from Financial Modeling Prep API. Evaluates environmental factors (carbon emissions, resource usage, climate initiatives), social components (labor practices, diversity, community relations), and governance elements (board structure, executive compensation, shareholder rights). Analyzes recent ESG-related news and press releases, compares performance against sector peers, identifies sustainability strengths and controversies, and provides a detailed report with scoring across key ESG dimensions and trend analysis of improvement or deterioration over time."
+      "description": "Comprehensively assesses a company's Environmental, Social, and Governance (ESG) performance using specialized ESG ratings data, disclosure metrics, and industry benchmarks from Financial Modeling Prep API. Evaluates environmental factors (carbon emissions, resource usage, climate initiatives), social components (labor practices, diversity, community relations), and governance elements (board structure, executive compensation, shareholder rights). Analyzes recent ESG-related news and press releases, compares performance against sector peers, identifies sustainability strengths and controversies, and provides a detailed report with scoring across key ESG dimensions and trend analysis of improvement or deterioration over time.",
+      "examples": [
+        "Assess Tesla’s ESG performance against automotive industry peers over the past year",
+        "Provide a detailed ESG scorecard for Microsoft, including carbon emissions and governance metrics",
+        "Analyze recent ESG controversies and improvements for Amazon using latest ratings data"
+      ]
     },
     {
       "id": "macro_economic_sector_analysis_tool",
       "profile_id": "workflows",
       "name": "Macroeconomic Sector Analysis Tool",
-      "description": "Analyzes interactions between macroeconomic indicators and sector/industry performance using comprehensive economic data (GDP, unemployment, inflation, treasury rates) and sector/industry metrics from Financial Modeling Prep API. Correlates economic cycles with sector rotation patterns, examines how interest rate environments impact different industries, analyzes sector and industry price-to-earnings ratios relative to historical averages, and identifies sectors positioned advantageously in current and projected economic conditions. Produces a detailed report with economic trend analysis, sector performance assessment, industry-specific insights, and forward-looking sector positioning recommendations based on macro forecasts."
+      "description": "Analyzes interactions between macroeconomic indicators and sector/industry performance using comprehensive economic data (GDP, unemployment, inflation, treasury rates) and sector/industry metrics from Financial Modeling Prep API. Correlates economic cycles with sector rotation patterns, examines how interest rate environments impact different industries, analyzes sector and industry price-to-earnings ratios relative to historical averages, and identifies sectors positioned advantageously in current and projected economic conditions. Produces a detailed report with economic trend analysis, sector performance assessment, industry-specific insights, and forward-looking sector positioning recommendations based on macro forecasts.",
+      "examples": [
+        "Analyze how recent inflation data is impacting financial sector P/E ratios",
+        "Correlate GDP growth trends with technology sector performance this quarter",
+        "Identify which sectors are poised to benefit from a declining unemployment rate scenario"
+      ]
     },
     {
       "id": "etf_mutual_fund_holding_analysis_tool",
       "profile_id": "workflows",
       "name": "ETF Mutual Fund Holding Analysis Tool",
-      "description": "Performs deep analysis of ETF and mutual fund portfolios by examining holdings composition, allocation strategies, geographic and sector exposures, and fund performance metrics. Analyzes asset weightings across different investment categories, evaluates country and regional exposure distributions, examines sector concentration or diversification approaches, tracks changes in major position allocations over time, and benchmarks performance against relevant indexes. Generates a comprehensive report detailing portfolio construction methodology, key exposure concentrations, risk/diversification assessment, notable position changes, performance attribution analysis, and strategic investment themes represented in the fund structure."
+      "description": "Performs deep analysis of ETF and mutual fund portfolios by examining holdings composition, allocation strategies, geographic and sector exposures, and fund performance metrics. Analyzes asset weightings across different investment categories, evaluates country and regional exposure distributions, examines sector concentration or diversification approaches, tracks changes in major position allocations over time, and benchmarks performance against relevant indexes. Generates a comprehensive report detailing portfolio construction methodology, key exposure concentrations, risk/diversification assessment, notable position changes, performance attribution analysis, and strategic investment themes represented in the fund structure.",
+      "examples": [
+        "Analyze SPY ETF’s top 10 holdings and sector breakdown over the last quarter",
+        "Provide geographic exposure analysis for Vanguard Total Stock Market Fund",
+        "Identify major position changes in an ETF portfolio and compare performance to index benchmarks"
+      ]
     },
     {
       "id": "market_data_technical_analysis_tool",
       "profile_id": "workflows",
       "name": "Market Data Technical Analysis Tool",
-      "description": "Conducts sophisticated technical analysis for intraday trading using multi-timeframe data (1-min to 4-hour charts) and calculates numerous technical indicators (moving averages, momentum oscillators, trend indicators) from Financial Modeling Prep API. Identifies key support/resistance levels, trend directions across different timeframes, momentum characteristics, volatility conditions, and potential reversal signals. Processes real-time quote data alongside technical indicators to determine optimal entry/exit points, generate specific trading signals with confidence levels, identify stop-loss placement levels based on volatility metrics, and produce a comprehensive trading dashboard with actionable insights for different trading timeframes."
+      "description": "Conducts sophisticated technical analysis for intraday trading using multi-timeframe data (1-min to 4-hour charts) and calculates numerous technical indicators (moving averages, momentum oscillators, trend indicators) from Financial Modeling Prep API. Identifies key support/resistance levels, trend directions across different timeframes, momentum characteristics, volatility conditions, and potential reversal signals. Processes real-time quote data alongside technical indicators to determine optimal entry/exit points, generate specific trading signals with confidence levels, identify stop-loss placement levels based on volatility metrics, and produce a comprehensive trading dashboard with actionable insights for different trading timeframes.",
+      "examples": [
+        "Run intraday RSI and MACD analysis on AAPL using 1-minute and 5-minute data",
+        "Identify support and resistance levels for TSLA on a 4-hour chart with Bollinger Bands",
+        "Generate trading signal alerts for Bitcoin based on 15-minute moving average crossovers"
+      ]
     },
     {
       "id": "insider_Trading_institutional_ownership_analysis_tool",
       "profile_id": "workflows",
       "name": "Insider Trading Institutional Ownership Analysis Tool",
-      "description": "Analyzes patterns in insider transactions (purchases, sales, option exercises) and institutional ownership changes using SEC filing data from Financial Modeling Prep API. Examines transaction timing, volume, price levels, and participating insiders (categorized by role importance), calculates net insider buying/selling momentum metrics, identifies unusual or clustered transaction patterns, and correlates with price movements. For institutional ownership, tracks position changes among major holders, calculates concentration metrics, identifies new institutional entrants or complete exits, and analyzes ownership distribution across institution types. Produces a comprehensive report with insider sentiment indicators, institutional ownership trends, and potential signals for future price movements based on the actions of those with privileged information or significant market influence."
+      "description": "Analyzes patterns in insider transactions (purchases, sales, option exercises) and institutional ownership changes using SEC filing data from Financial Modeling Prep API. Examines transaction timing, volume, price levels, and participating insiders (categorized by role importance), calculates net insider buying/selling momentum metrics, identifies unusual or clustered transaction patterns, and correlates with price movements. For institutional ownership, tracks position changes among major holders, calculates concentration metrics, identifies new institutional entrants or complete exits, and analyzes ownership distribution across institution types. Produces a comprehensive report with insider sentiment indicators, institutional ownership trends, and potential signals for future price movements based on the actions of those with privileged information or significant market influence.",
+      "examples": [
+        "Analyze recent insider purchases and sales for Netflix and identify timing patterns",
+        "Track institutional ownership changes for Berkshire Hathaway over the past year",
+        "Provide an insider trading momentum report for Amazon with correlated price movements"
+      ]
     },
     {
       "id": "dividend_strategy_income_analysis_tool",
       "profile_id": "workflows",
       "name": "Dividend Strategy Income Analysis Tool",
-      "description": "Evaluates dividend investment opportunities by analyzing historical dividend patterns, yield metrics, sustainability factors, and income generation potential using Financial Modeling Prep API data. Calculates current yield, 5-year yield trend, dividend growth rates (1/3/5/10-year), payout ratios relative to earnings and free cash flow, dividend coverage metrics, and dividend consistency/interruption history. Examines upcoming ex-dividend dates, projected annual income based on current position sizing, yield comparison with sector peers and fixed-income alternatives, and correlation between dividend changes and stock price performance. Generates a comprehensive report with dividend quality assessment, sustainability analysis, income projection modeling, peer comparison metrics, and overall dividend strategy evaluation for income-focused investors."
+      "description": "Evaluates dividend investment opportunities by analyzing historical dividend patterns, yield metrics, sustainability factors, and income generation potential using Financial Modeling Prep API data. Calculates current yield, 5-year yield trend, dividend growth rates (1/3/5/10-year), payout ratios relative to earnings and free cash flow, dividend coverage metrics, and dividend consistency/interruption history. Examines upcoming ex-dividend dates, projected annual income based on current position sizing, yield comparison with sector peers and fixed-income alternatives, and correlation between dividend changes and stock price performance. Generates a comprehensive report with dividend quality assessment, sustainability analysis, income projection modeling, peer comparison metrics, and overall dividend strategy evaluation for income-focused investors.",
+      "examples": [
+        "Evaluate Coca-Cola’s dividend yield trends and sustainability over the last 5 years",
+        "Generate a projected income report for Johnson & Johnson based on upcoming ex-dividend dates",
+        "Compare dividend yields and payout ratios across S&P 500 consumer staples companies"
+      ]
     },
     {
       "id": "merger_and_acquisition_analysis_tool",
       "profile_id": "workflows",
       "name": "Merger and Acquisition Analysis Tool",
-      "description": "Analyzes recent and announced merger and acquisition activities across markets using transaction data from Financial Modeling Prep API. Examines deal structures (cash, stock, mixed), transaction valuations (total value, premiums paid, multiples), strategic rationales (market expansion, vertical integration, technology acquisition), regulatory consideration factors, and projected synergies. Correlates M&A activity with sector performance metrics, identifies consolidation trends within industries, analyzes historical success rates of similar transactions, and evaluates market reactions to announcements. Produces a detailed report covering key transaction analyses, sector impact assessment, consolidation trend identification, arbitrage opportunity evaluation for announced deals, and investment implications for related companies within the affected sectors."
+      "description": "Analyzes recent and announced merger and acquisition activities across markets using transaction data from Financial Modeling Prep API. Examines deal structures (cash, stock, mixed), transaction valuations (total value, premiums paid, multiples), strategic rationales (market expansion, vertical integration, technology acquisition), regulatory consideration factors, and projected synergies. Correlates M&A activity with sector performance metrics, identifies consolidation trends within industries, analyzes historical success rates of similar transactions, and evaluates market reactions to announcements. Produces a detailed report covering key transaction analyses, sector impact assessment, consolidation trend identification, arbitrage opportunity evaluation for announced deals, and investment implications for related companies within the affected sectors.",
+      "examples": [
+        "Analyze the strategic rationale and valuation multiples for Salesforce’s acquisition of Slack",
+        "Provide a sector impact report for Amazon’s Whole Foods merger",
+        "Evaluate recent M&A trends in the semiconductor industry, including deal premiums"
+      ]
     },
     {
       "id": "ipo_market_trends_analysis_tool",
       "profile_id": "workflows",
       "name": "IPO Market Trends Analysis Tool",
-      "description": "Examines upcoming and recent Initial Public Offerings (IPOs) using prospectus data, disclosure information, and market performance metrics from Financial Modeling Prep API. Analyzes offering sizes, pricing trends relative to filing ranges, first-day performance statistics, lock-up period timelines, underwriter groupings, and sector distribution patterns. Evaluates business fundamentals of IPO candidates (revenue growth, profitability status, market opportunity), compares valuation metrics with public peers, identifies investor sentiment patterns toward new issues, and examines post-IPO performance across different timeframes. Generates a comprehensive report with IPO market condition assessment, detailed analysis of notable recent and upcoming offerings, sector trend identification, performance pattern recognition, and investment strategy recommendations for approaching the IPO market."
+      "description": "Examines upcoming and recent Initial Public Offerings (IPOs) using prospectus data, disclosure information, and market performance metrics from Financial Modeling Prep API. Analyzes offering sizes, pricing trends relative to filing ranges, first-day performance statistics, lock-up period timelines, underwriter groupings, and sector distribution patterns. Evaluates business fundamentals of IPO candidates (revenue growth, profitability status, market opportunity), compares valuation metrics with public peers, identifies investor sentiment patterns toward new issues, and examines post-IPO performance across different timeframes. Generates a comprehensive report with IPO market condition assessment, detailed analysis of notable recent and upcoming offerings, sector trend identification, performance pattern recognition, and investment strategy recommendations for approaching the IPO market.",
+      "examples": [
+        "Analyze pricing trends for recent technology IPOs and compare to filing ranges",
+        "Provide first-day performance statistics and lock-up timelines for Coinbase IPO",
+        "Generate a market condition report for upcoming IPOs in the healthcare sector"
+      ]
     },
     {
       "id": "forex_and_commodity_trading_analysis_tool",
       "profile_id": "workflows",
       "name": "Forex and Commodity Trading Analysis Tool",
-      "description": "Develops sophisticated trading strategies for currency pairs and commodity markets using comprehensive price data, technical indicators, and correlation analysis from Financial Modeling Prep API. Analyzes multi-timeframe price action (1-min to 4-hour charts), calculates momentum indicators (RSI, Williams %R), trend measures (moving averages, ADX), volatility metrics (standard deviation), and examines historical price patterns. Identifies key support/resistance levels, determines trend strength across timeframes, calculates currency correlation matrices, evaluates seasonal patterns in commodities, and produces potential entry/exit signals with risk-reward ratios. Generates a detailed trading strategy report with specific market analysis, technical signal identification, position sizing recommendations based on volatility, stop-loss placement logic, risk management parameters, and backtested performance metrics for the proposed strategy."
+      "description": "Develops sophisticated trading strategies for currency pairs and commodity markets using comprehensive price data, technical indicators, and correlation analysis from Financial Modeling Prep API. Analyzes multi-timeframe price action (1-min to 4-hour charts), calculates momentum indicators (RSI, Williams %R), trend measures (moving averages, ADX), volatility metrics (standard deviation), and examines historical price patterns. Identifies key support/resistance levels, determines trend strength across timeframes, calculates currency correlation matrices, evaluates seasonal patterns in commodities, and produces potential entry/exit signals with risk-reward ratios. Generates a detailed trading strategy report with specific market analysis, technical signal identification, position sizing recommendations based on volatility, stop-loss placement logic, risk management parameters, and backtested performance metrics for the proposed strategy.",
+      "examples": [
+        "Generate a trading strategy for EUR/USD using 1-hour RSI and ADX signals",
+        "Identify support and resistance levels for Gold on a 4-hour chart with volatility analysis",
+        "Analyze correlation between USD/JPY and crude oil prices over the past month"
+      ]
     },
     {
       "id": "crypto_market_sentiment_price_analysis_tool",
       "profile_id": "workflows",
       "name": "Crypto Market Sentiment Price Analysis Tool",
-      "description": "Performs comprehensive analysis of cryptocurrency markets by combining price data, technical indicators, market news sentiment, and on-chain metrics from Financial Modeling Prep API. Examines multi-timeframe price action (1-min to 4-hour charts), calculates key technical indicators (moving averages, RSI, Williams %R, ADX), analyzes trading volume patterns across exchanges, and identifies potential support/resistance levels. Processes crypto-specific news to gauge market sentiment, evaluates market-wide cryptocurrency trends for correlation analysis, identifies institutional participation signals, and calculates volatility metrics compared to historical ranges. Produces a detailed crypto analysis report with price trend assessment, technical signal identification, sentiment analysis results, correlation with broader crypto market, volatility evaluation, and trading strategy recommendations with risk management parameters specifically calibrated for cryptocurrency volatility profiles."
+      "description": "Performs comprehensive analysis of cryptocurrency markets by combining price data, technical indicators, market news sentiment, and on-chain metrics from Financial Modeling Prep API. Examines multi-timeframe price action (1-min to 4-hour charts), calculates key technical indicators (moving averages, RSI, Williams %R, ADX), analyzes trading volume patterns across exchanges, and identifies potential support/resistance levels. Processes crypto-specific news to gauge market sentiment, evaluates market-wide cryptocurrency trends for correlation analysis, identifies institutional participation signals, and calculates volatility metrics compared to historical ranges. Produces a detailed crypto analysis report with price trend assessment, technical signal identification, sentiment analysis results, correlation with broader crypto market, volatility evaluation, and trading strategy recommendations with risk management parameters specifically calibrated for cryptocurrency volatility profiles.",
+      "examples": [
+        "Analyze Bitcoin’s sentiment from the latest on-chain metrics and news headlines",
+        "Provide RSI and moving average analysis for Ethereum on a 4-hour chart",
+        "Identify support and resistance levels for Dogecoin and correlate with social media sentiment"
+      ]
     },
     {
       "id": "financial_estimates_tool",
       "profile_id": "internal-search",
       "name": "Financial Estimates Tool",
-      "description": "Retrieves comprehensive analyst financial estimates for stocks including projected revenue ranges (low, high, average), EBITDA forecasts, net income projections, EPS predictions, and SGA expense estimates. Provides visibility into analyst consensus with the number of analysts contributing to each metric, supporting investment decisions with forward-looking financial data across annual and quarterly periods."
+      "description": "Retrieves comprehensive analyst financial estimates for stocks including projected revenue ranges (low, high, average), EBITDA forecasts, net income projections, EPS predictions, and SGA expense estimates. Provides visibility into analyst consensus with the number of analysts contributing to each metric, supporting investment decisions with forward-looking financial data across annual and quarterly periods.",
+      "examples": [
+        "Get Q3 analyst revenue and EPS estimates for Nvidia",
+        "Retrieve projected EBITDA and net income ranges for Microsoft next fiscal year",
+        "Show the number of analysts and average EPS forecast for Tesla"
+      ]
     },
     {
       "id": "ratings_snapshot_tool",
       "profile_id": "internal-search",
       "name": "Ratings Snapshot Tool",
-      "description": "Delivers current financial health assessments through letter-grade ratings (e.g., 'A-') and numerical scoring (1-5) across critical performance metrics. Evaluates companies on discounted cash flow, return on equity, return on assets, debt-to-equity ratio, price-to-earnings ratio, and price-to-book value. Provides an overall composite score aggregating these individual metrics for rapid financial strength assessment."
+      "description": "Delivers current financial health assessments through letter-grade ratings (e.g., 'A-') and numerical scoring (1-5) across critical performance metrics. Evaluates companies on discounted cash flow, return on equity, return on assets, debt-to-equity ratio, price-to-earnings ratio, and price-to-book value. Provides an overall composite score aggregating these individual metrics for rapid financial strength assessment.",
+      "examples": [
+        "Show current composite rating and letter grade for Apple based on key financial ratios",
+        "Get an A- rating and numerical score for Alphabet from the latest snapshot",
+        "Provide the current rating snapshot for Amazon with underlying metric breakdown"
+      ]
     },
     {
       "id": "historical_ratings_tool",
       "profile_id": "internal-search",
       "name": "Historical Ratings Tool",
-      "description": "Tracks financial performance evolution through time-series rating data. Chronicles changes in letter-grade ratings and numerical scores across key metrics including cash flow, profitability ratios, asset utilization, leverage, and valuation multiples. Enables trend analysis of company financial health by providing date-stamped historical rating snapshots for identifying improvement or deterioration patterns."
+      "description": "Tracks financial performance evolution through time-series rating data. Chronicles changes in letter-grade ratings and numerical scores across key metrics including cash flow, profitability ratios, asset utilization, leverage, and valuation multiples. Enables trend analysis of company financial health by providing date-stamped historical rating snapshots for identifying improvement or deterioration patterns.",
+      "examples": [
+        "Retrieve historical rating data for Tesla from 2018 through 2024",
+        "Analyze the trend in Microsoft’s numerical scores across cash flow and ROE since 2019",
+        "Show changes in Apple’s letter-grade ratings for valuation multiples over the past five years"
+      ]
     },
     {
       "id": "price_target_summary_tool",
       "profile_id": "internal-search",
       "name": "Price Target Summary Tool",
-      "description": "Aggregates analyst price target expectations across multiple time horizons (month, quarter, year, all-time), showing count of contributing analysts per period and average price targets. Includes the source publishers for transparency. Provides temporal analysis of analyst sentiment to identify shifting expectations and the breadth of market coverage, enabling comparative assessment of short and long-term price forecasts."
+      "description": "Aggregates analyst price target expectations across multiple time horizons (month, quarter, year, all-time), showing count of contributing analysts per period and average price targets. Includes the source publishers for transparency. Provides temporal analysis of analyst sentiment to identify shifting expectations and the breadth of market coverage, enabling comparative assessment of short and long-term price forecasts.",
+      "examples": [
+        "Get average price target for Amazon for next quarter and number of contributing analysts",
+        "Show all-time price target summary for Google with count of analysts per period",
+        "Retrieve quarterly average price targets for Microsoft and compare to last year"
+      ]
     },
     {
       "id": "price_target_consensus_tool",
       "profile_id": "internal-search",
       "name": "Price Target Consensus Tool",
-      "description": "Extracts consolidated analyst price expectations highlighting range boundaries (high/low targets), statistical midpoints (median), and weighted consensus figures. Offers a comprehensive price expectation spectrum that quantifies the full range of market forecasts, enabling assessment of both consensus views and outlier opinions to inform price-sensitive investment decisions."
+      "description": "Extracts consolidated analyst price expectations highlighting range boundaries (high/low targets), statistical midpoints (median), and weighted consensus figures. Offers a comprehensive price expectation spectrum that quantifies the full range of market forecasts, enabling assessment of both consensus views and outlier opinions to inform price-sensitive investment decisions.",
+      "examples": [
+        "Show high, low, median, and consensus price target range for Apple",
+        "Retrieve Google’s price target consensus breakdown including outliers",
+        "Get weighted consensus price target figures for Microsoft with range boundaries"
+      ]
     },
     {
       "id": "price_target_news_tool",
       "profile_id": "internal-search",
       "name": "Price Target News Tool",
-      "description": "Monitors analyst price target changes with detailed event context including publication date, originating analyst name and firm, precise target figures (both raw and adjusted), stock price at announcement, news headline, and source attribution with URLs. Enables analysis of market impact from target revisions by connecting price movements to specific analyst actions with full contextual metadata."
+      "description": "Monitors analyst price target changes with detailed event context including publication date, originating analyst name and firm, precise target figures (both raw and adjusted), stock price at announcement, news headline, and source attribution with URLs. Enables analysis of market impact from target revisions by connecting price movements to specific analyst actions with full contextual metadata.",
+      "examples": [
+        "Get the latest price target change announcements for Netflix with analyst name and firm",
+        "Retrieve Google’s most recent price target revisions including stock price and headline",
+        "Show price target change news for Tesla with publication date and source URLs"
+      ]
     },
     {
       "id": "price_target_latest_news_tool",
       "profile_id": "internal-search",
       "name": "Price Target Latest News Tool",
-      "description": "Streams real-time price target updates across all symbols in chronological order, providing analyst names, companies, target prices, concurrent stock prices, publication sources with URLs, and news headlines. Delivers market-wide coverage of most recent analyst actions, enabling immediate identification of shifting sentiment across sectors and opportunities created by fresh analyst coverage."
+      "description": "Streams real-time price target updates across all symbols in chronological order, providing analyst names, companies, target prices, concurrent stock prices, publication sources with URLs, and news headlines. Delivers market-wide coverage of most recent analyst actions, enabling immediate identification of shifting sentiment across sectors and opportunities created by fresh analyst coverage.",
+      "examples": [
+        "Show the most recent price target updates across all tech symbols",
+        "Retrieve real-time price target announcements for Tesla with analyst and firm details",
+        "Get latest price target changes for FAANG stocks in chronological order"
+      ]
     },
     {
       "id": "stock_grades_tool",
       "profile_id": "internal-search",
       "name": "Stock Grades Tool",
-      "description": "Captures qualitative analyst ratings through standardized grading terminology (e.g., 'Overweight', 'Buy', 'Hold'), tracking both previous and current grades with classification of action type (maintain, upgrade, downgrade, initiate). Provides issuing firm attribution and precise dating of grade changes to assess shifts in analyst sentiment and identify rating catalysts."
+      "description": "Captures qualitative analyst ratings through standardized grading terminology (e.g., 'Overweight', 'Buy', 'Hold'), tracking both previous and current grades with classification of action type (maintain, upgrade, downgrade, initiate). Provides issuing firm attribution and precise dating of grade changes to assess shifts in analyst sentiment and identify rating catalysts.",
+      "examples": [
+        "Get current rating action and firm for Netflix (Buy/Hold/Sell)",
+        "Show Google’s latest rating upgrade details including issuing analyst and date",
+        "Retrieve Amazon’s most recent rating change event with previous and new grades"
+      ]
     },
     {
       "id": "historical_stock_grades_tool",
       "profile_id": "internal-search",
       "name": "Historical Stock Grades Tool",
-      "description": "Archives time-series data on analyst rating distributions, quantifying the number of Buy, Hold, Sell, and Strong Sell recommendations at specific historical dates. Enables trend analysis of shifting analyst sentiment over time, highlighting periods of consensus strengthening or fragmenting, and identification of significant changes in market perception."
+      "description": "Archives time-series data on analyst rating distributions, quantifying the number of Buy, Hold, Sell, and Strong Sell recommendations at specific historical dates. Enables trend analysis of shifting analyst sentiment over time, highlighting periods of consensus strengthening or fragmenting, and identification of significant changes in market perception.",
+      "examples": [
+        "Retrieve historical rating distribution for Microsoft from 2019 to 2024 showing Buy/Hold/Sell counts",
+        "Analyze trend in Apple’s Strong Buy recommendations over the last five years",
+        "Show historical Sell rating spikes for Tesla during major market events"
+      ]
     },
     {
       "id": "stock_grades_summary_tool",
       "profile_id": "internal-search",
       "name": "Stock Grades Summary Tool",
-      "description": "Synthesizes overall market sentiment through quantitative rating distribution analysis, tallying Strong Buy, Buy, Hold, Sell, and Strong Sell recommendations to generate a consensus rating label. Produces a statistical overview of analyst opinions, highlighting the degree of agreement or disagreement in market assessments and enabling comparison of sentiment distribution patterns across companies."
+      "description": "Synthesizes overall market sentiment through quantitative rating distribution analysis, tallying Strong Buy, Buy, Hold, Sell, and Strong Sell recommendations to generate a consensus rating label. Produces a statistical overview of analyst opinions, highlighting the degree of agreement or disagreement in market assessments and enabling comparison of sentiment distribution patterns across companies.",
+      "examples": [
+        "Show consensus rating label and distribution percentages for Amazon",
+        "Get summarized market sentiment for Google based on aggregated rating counts",
+        "Provide a consensus rating summary for Tesla with percentage breakdown"
+      ]
     },
     {
       "id": "stock_grade_news_tool",
       "profile_id": "internal-search",
       "name": "Stock Grade News Tool",
-      "description": "Documents specific analyst rating events with comprehensive context including publication date, issuing firm, previous and new grades, action classification (upgrade, downgrade, maintain, initiate), stock price at announcement, news headline, and source attribution with URLs. Enables assessment of market reactions to rating changes by connecting specific analyst actions to news coverage and price movements."
+      "description": "Documents specific analyst rating events with comprehensive context including publication date, issuing firm, previous and new grades, action classification (upgrade, downgrade, maintain, initiate), stock price at announcement, news headline, and source attribution with URLs. Enables assessment of market reactions to rating changes by connecting specific analyst actions to news coverage and price movements.",
+      "examples": [
+        "Get Google’s latest downgrade event details including previous and new grades, stock price, and headline",
+        "Retrieve Netflix’s rating upgrade news with issuing firm and context",
+        "Show Amazon’s most recent rating change event and impact on stock price"
+      ]
     },
     {
       "id": "stock_grade_latest_news_tool",
       "profile_id": "internal-search",
       "name": "Stock Grade Latest News Tool",
-      "description": "Monitors real-time rating changes across all market symbols, capturing full event details including publication timestamp, grading firm, previous and new ratings, action type, concurrent stock price, news headline, and source URLs. Provides immediate visibility into the most recent analyst sentiment shifts across the market, enabling rapid identification of emerging trends and potential investment opportunities."
+      "description": "Monitors real-time rating changes across all market symbols, capturing full event details including publication timestamp, grading firm, previous and new ratings, action type, concurrent stock price, news headline, and source URLs. Provides immediate visibility into the most recent analyst sentiment shifts across the market, enabling rapid identification of emerging trends and potential investment opportunities.",
+      "examples": [
+        "Show the latest real-time rating changes for TSLA and AAPL with full context",
+        "Retrieve newest upgrade/downgrade events for FAANG stocks in chronological order",
+        "Get real-time rating change alerts for all S&P 500 symbols"
+      ]
     },
     {
       "id": "dividends_company_tool",
       "profile_id": "internal-search",
       "name": "Dividends Company Tool",
-      "description": "Provides comprehensive dividend payment history for individual securities, including precise date sequencing (declaration, record, and payment dates), dividend amount details (both raw and adjusted values), current yield calculations, and payment frequency patterns. Enables detailed dividend track record analysis, identification of companies with consistent dividend histories, and calculation of income stream projections based on historical payment patterns."
+      "description": "Provides comprehensive dividend payment history for individual securities, including precise date sequencing (declaration, record, and payment dates), dividend amount details (both raw and adjusted values), current yield calculations, and payment frequency patterns. Enables detailed dividend track record analysis, identification of companies with consistent dividend histories, and calculation of income stream projections based on historical payment patterns.",
+      "examples": [
+        "Get full dividend history for Coca-Cola including declaration and payment dates",
+        "Calculate IBM’s dividend yield and payout ratio over the past five years",
+        "Show adjusted dividend values and frequency for Johnson & Johnson"
+      ]
     },
     {
       "id": "dividends_calendar_tool",
       "profile_id": "internal-search",
       "name": "Dividends Calendar Tool",
-      "description": "Delivers a market-wide schedule of upcoming dividend events within specified date ranges, including complete dividend lifecycle dates (declaration, record, payment), current yield metrics, and payment frequency classification. Supports portfolio income planning by providing a time-sequenced view of all dividend-paying securities, enabling identification of high-yield opportunities and coordination of investment timing with record date requirements."
+      "description": "Delivers a market-wide schedule of upcoming dividend events within specified date ranges, including complete dividend lifecycle dates (declaration, record, payment), current yield metrics, and payment frequency classification. Supports portfolio income planning by providing a time-sequenced view of all dividend-paying securities, enabling identification of high-yield opportunities and coordination of investment timing with record date requirements.",
+      "examples": [
+        "Show upcoming dividend events for the next month with declaration and payment dates",
+        "Get dividend schedule for S&P 500 companies between July 1 and July 31",
+        "Provide yield metrics for all telecom sector dividend events next quarter"
+      ]
     },
     {
       "id": "earnings_report_tool",
       "profile_id": "internal-search",
       "name": "Earnings Report Tool",
-      "description": "Retrieves historical and scheduled earnings announcements for specific securities, presenting both estimated and actual performance metrics for earnings per share (EPS) and revenue. Includes recency indicators with last update timestamps, enabling earnings surprise analysis, historical accuracy assessment of analyst estimates, and trend identification in company performance versus market expectations."
+      "description": "Retrieves historical and scheduled earnings announcements for specific securities, presenting both estimated and actual performance metrics for earnings per share (EPS) and revenue. Includes recency indicators with last update timestamps, enabling earnings surprise analysis, historical accuracy assessment of analyst estimates, and trend identification in company performance versus market expectations.",
+      "examples": [
+        "Get next earnings date and EPS/revenue estimates for Netflix",
+        "Retrieve actual EPS vs estimate for Microsoft’s last quarterly report",
+        "Show historical earnings announcements and surprise percentages for Apple"
+      ]
     },
     {
       "id": "earnings_calendar_tool",
       "profile_id": "internal-search",
       "name": "Earnings Calendar Tool",
-      "description": "Aggregates all market earnings announcements within specified date ranges, providing both forecast data (estimated EPS and revenue) and actual results when available, with freshness monitoring through last update timestamps. Delivers a comprehensive market-wide earnings schedule that supports trading strategy planning around high-impact announcements, sector-wide earnings trend analysis, and identification of potential volatility triggers."
+      "description": "Aggregates all market earnings announcements within specified date ranges, providing both forecast data (estimated EPS and revenue) and actual results when available, with freshness monitoring through last update timestamps. Delivers a comprehensive market-wide earnings schedule that supports trading strategy planning around high-impact announcements, sector-wide earnings trend analysis, and identification of potential volatility triggers.",
+      "examples": [
+        "Show earnings announcements for tech stocks next week with estimates and dates",
+        "Get historical earnings calendar for S&P 500 during Q4 2023",
+        "Retrieve forecast vs actual EPS for all healthcare companies this quarter"
+      ]
     },
     {
       "id": "ipos_calendar_tool",
       "profile_id": "internal-search",
       "name": "IPOs Calendar Tool",
-      "description": "Monitors upcoming initial public offerings across all exchanges with detailed scheduling information, company identification, listing exchange details, offering status updates, and (when available) share quantity and pricing expectations. Provides comprehensive visibility into the new issues pipeline, enabling early identification of investment opportunities, tracking of market sentiment toward new listings, and assessment of capital raising trends across sectors."
+      "description": "Monitors upcoming initial public offerings across all exchanges with detailed scheduling information, company identification, listing exchange details, offering status updates, and (when available) share quantity and pricing expectations. Provides comprehensive visibility into the new issues pipeline, enabling early identification of investment opportunities, tracking of market sentiment toward new listings, and assessment of capital raising trends across sectors.",
+      "examples": [
+        "Show upcoming IPOs scheduled for the next 30 days with exchange details",
+        "Get IPO calendar for tech companies launching in Q3 2024",
+        "Retrieve offering status and expected pricing range for Robinhood’s IPO"
+      ]
     },
     {
       "id": "ipos_disclosure_tool",
       "profile_id": "internal-search",
       "name": "IPOs Disclosure Tool",
-      "description": "Tracks the regulatory filing progression of companies preparing for public market entry, documenting critical SEC submission milestones with precise dates (filing, acceptance, effectiveness), formal identification through CIK numbers, categorization by document type, and direct access to official filing documents. Enables monitoring of the pre-IPO regulatory process, assessment of filing completeness and timing, and early due diligence through direct document examination."
+      "description": "Tracks the regulatory filing progression of companies preparing for public market entry, documenting critical SEC submission milestones with precise dates (filing, acceptance, effectiveness), formal identification through CIK numbers, categorization by document type, and direct access to official filing documents. Enables monitoring of the pre-IPO regulatory process, assessment of filing completeness and timing, and early due diligence through direct document examination.",
+      "examples": [
+        "Get SEC filing dates and milestones for Airbnb’s IPO using CIK number",
+        "Show acceptance and effectiveness dates for Stripe’s S-1 registration",
+        "Retrieve document type and filing details for Pinterest pre-IPO filings"
+      ]
     },
     {
       "id": "ipos_prospectus_tool",
       "profile_id": "internal-search",
       "name": "IPOs Prospectus Tool",
-      "description": "Extracts detailed financial metrics from IPO prospectus filings including granular pricing structure (per-share and aggregate amounts), commission arrangements, net proceeds projections, and temporal data (filing sequence, acceptance timing, and offering date). Integrates document access through SEC filing links, supporting comprehensive pre-IPO analysis with offering structure details, underwriter economics assessment, and capital raising efficiency evaluation."
+      "description": "Extracts detailed financial metrics from IPO prospectus filings including granular pricing structure (per-share and aggregate amounts), commission arrangements, net proceeds projections, and temporal data (filing sequence, acceptance timing, and offering date). Integrates document access through SEC filing links, supporting comprehensive pre-IPO analysis with offering structure details, underwriter economics assessment, and capital raising efficiency evaluation.",
+      "examples": [
+        "Extract net proceeds projections and commission breakdown from Palantir’s IPO prospectus",
+        "Get pricing structure and underwriter details for Coinbase’s IPO filing",
+        "Retrieve temporal offering details and share quantities from Robinhood’s S-1 prospectus"
+      ]
     },
     {
       "id": "stock_split_details_tool",
       "profile_id": "internal-search",
       "name": "Stock Split Details Tool",
-      "description": "Provides the complete split history for individual securities, documenting each recapitalization event with precise execution dates and mathematical split ratios expressed as numerator/denominator pairs. Supports historical price normalization, share count reconciliation across time periods, and identification of companies with active capital structure management histories."
+      "description": "Provides the complete split history for individual securities, documenting each recapitalization event with precise execution dates and mathematical split ratios expressed as numerator/denominator pairs. Supports historical price normalization, share count reconciliation across time periods, and identification of companies with active capital structure management histories.",
+      "examples": [
+        "Get Apple’s complete split history with dates and ratio for each event",
+        "Retrieve Tesla’s split events and ratio details over the past decade",
+        "Show split history and ratio for Google to normalize historical prices"
+      ]
     },
     {
       "id": "stock_splits_calendar_tool",
       "profile_id": "internal-search",
       "name": "Stock Splits Calendar Tool",
-      "description": "Monitors upcoming stock split events across the entire market within specified date ranges, providing complete split ratio details through numerator/denominator expressions and precise execution dates. Enables proactive portfolio adjustment planning, identification of potential volatility events, and trading strategy development around share structure changes that may impact liquidity and accessibility."
+      "description": "Monitors upcoming stock split events across the entire market within specified date ranges, providing complete split ratio details through numerator/denominator expressions and precise execution dates. Enables proactive portfolio adjustment planning, identification of potential volatility events, and trading strategy development around share structure changes that may impact liquidity and accessibility.",
+      "examples": [
+        "Show upcoming stock splits in the next 60 days with ratio and execution date",
+        "Get split calendar for all S&P 500 companies scheduled this quarter",
+        "Retrieve split ratio details for scheduled Microsoft and Apple splits"
+      ]
     }
   ]
 }
-
-
-
-
-
-
-
